@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -224,6 +224,97 @@ footer{text-align:center;padding:38px;border-top:1px solid rgba(212,160,23,.14);
 .ft-sd-label{color:var(--gold);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;margin-top:2px;min-width:80px}
 @media(max-width:640px){.ft-item{grid-template-columns:1fr}.ft-date{text-align:left;padding-bottom:4px}.ft-content{border-left:none;padding-left:0}.ft-content::before{display:none}.ft-item::before{display:none}}
 
+/* ── AGENT CARDS ──────────────────────────────── */
+.agent-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:6px;margin-bottom:40px;overflow:hidden}
+.agent-header{display:flex;align-items:center;gap:16px;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+.agent-badge{width:48px;height:48px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.agent-badge.sci{background:rgba(74,140,111,.18);border:1px solid rgba(74,140,111,.35)}
+.agent-badge.hist{background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3)}
+.agent-badge.eth{background:rgba(91,143,168,.15);border:1px solid rgba(91,143,168,.35)}
+.agent-name{font-family:"Playfair Display",serif;font-size:1.1rem;color:var(--parchment);margin-bottom:3px}
+.agent-desc{font-size:.78rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.agent-body{padding:22px 24px}
+/* ── SCIENCE ITEMS ───────────────────────────── */
+.sci-item{margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid rgba(74,140,111,.12)}
+.sci-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.sci-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
+.sci-num{font-family:"Playfair Display",serif;font-size:2.8rem;color:rgba(74,140,111,.25);line-height:1;min-width:54px;font-style:italic}
+.sci-title{font-family:"Playfair Display",serif;font-size:1.25rem;color:var(--parchment);line-height:1.3}
+.sci-tag{display:inline-block;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;padding:3px 9px;border:1px solid;border-radius:2px;margin-top:6px;margin-right:4px}
+.tag-astro{color:#7fb3d3;border-color:#7fb3d3}
+.tag-bio{color:#82e0aa;border-color:#82e0aa}
+.tag-geo{color:#f0b27a;border-color:#f0b27a}
+.tag-arq{color:#c39bd3;border-color:#c39bd3}
+.sci-block{background:rgba(74,140,111,.06);border-left:3px solid rgba(74,140,111,.5);padding:16px 20px;margin:16px 0;border-radius:0 4px 4px 0}
+.sci-ref{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#4a8c6f;margin-bottom:5px}
+.sci-text{font-size:.94rem;color:var(--dim);line-height:1.72}
+.sci-vs{text-align:center;color:#4a8c6f;font-size:.75rem;letter-spacing:.25em;padding:8px 0;opacity:.7}
+.sci-analysis{font-size:.95rem;color:var(--dim);line-height:1.87;margin:14px 0}
+.sci-conclusion{background:rgba(74,140,111,.08);border:1px solid rgba(74,140,111,.22);border-radius:4px;padding:18px 22px;margin-top:16px;font-size:.95rem;color:var(--text);line-height:1.85}
+.sci-conclusion::before{content:"Implicação científica";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#4a8c6f;margin-bottom:9px}
+/* ── ARCHAEOLOGY ──────────────────────────── */
+.arq-item{margin-bottom:46px;padding-bottom:46px;border-bottom:1px solid rgba(195,155,211,.1)}
+.arq-item:last-child{border-bottom:none;margin-bottom:0}
+.arq-finding{background:rgba(195,155,211,.06);border-left:3px solid rgba(195,155,211,.45);padding:16px 20px;margin:16px 0;border-radius:0 4px 4px 0}
+.arq-ref{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#c39bd3;margin-bottom:5px}
+.arq-text{font-size:.94rem;color:var(--dim);line-height:1.72}
+.arq-verdict{background:rgba(195,155,211,.07);border:1px solid rgba(195,155,211,.2);border-radius:4px;padding:16px 20px;margin-top:14px;font-size:.93rem;color:var(--text);line-height:1.82}
+.arq-verdict::before{content:"Veredicto arqueológico";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#c39bd3;margin-bottom:8px}
+/* ── COMPARATIVE RELIGION ─────────────────── */
+.rel-parallel{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:22px 0;border:1px solid rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.rel-col{padding:18px 20px;font-size:.9rem;color:var(--dim);line-height:1.7}
+.rel-col:first-child{background:rgba(212,160,23,.04);border-right:1px solid rgba(255,255,255,.06)}
+.rel-col:last-child{background:rgba(91,143,168,.04)}
+.rel-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.rel-label.a{color:var(--gold)}
+.rel-label.b{color:var(--blue)}
+.rel-vs-col{display:flex;align-items:center;justify-content:center;padding:0 12px;font-family:"Playfair Display",serif;font-style:italic;color:var(--gold);font-size:1rem;background:rgba(0,0,0,.15);writing-mode:horizontal-tb}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.rel-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:16px 14px;text-align:center}
+.rel-card-init{font-family:"Playfair Display",serif;font-size:1.5rem;font-style:italic;color:var(--gold);margin-bottom:8px}
+.rel-card-name{font-size:.8rem;color:var(--parchment);margin-bottom:5px}
+.rel-card-text{font-size:.78rem;color:var(--muted);line-height:1.6}
+/* ── PHILOSOPHY OF RELIGION ───────────────── */
+.arg-box{background:rgba(91,143,168,.06);border:1px solid rgba(91,143,168,.2);border-radius:4px;padding:22px 26px;margin:22px 0}
+.arg-title{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.arg-premise{display:flex;gap:12px;margin-bottom:12px;font-size:.93rem;color:var(--dim);line-height:1.75}
+.arg-premise:last-child{margin-bottom:0}
+.arg-arrow{color:var(--blue);flex-shrink:0;margin-top:2px}
+.arg-critique{background:rgba(192,82,42,.07);border:1px solid rgba(192,82,42,.22);border-radius:4px;padding:16px 20px;margin-top:14px;font-size:.93rem;color:var(--text);line-height:1.82}
+.arg-critique::before{content:"Crítica filosófica";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
+.trilemma{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.tri-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:16px}
+.tri-q{font-size:.88rem;color:var(--parchment);margin-bottom:6px;line-height:1.5}
+.tri-a{font-size:.83rem;color:var(--muted);line-height:1.6}
+@media(max-width:640px){.rel-parallel{grid-template-columns:1fr}.rel-vs-col{display:none}.rel-grid{grid-template-columns:1fr 1fr}.trilemma{grid-template-columns:1fr}}
+
+/* ── VISUALIZAÇÃO ────────────────────────────── */
+.viz-intro{max-width:780px;margin:0 auto 50px;padding:0 0 30px;border-bottom:1px solid rgba(212,160,23,.12);font-size:.97rem;color:var(--dim);line-height:1.87}
+.viz-category{margin-bottom:56px}
+.viz-cat-header{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.viz-cat-icon{font-size:1.4rem}
+.viz-cat-name{font-family:"Playfair Display",serif;font-size:1.15rem;color:var(--parchment);flex:1}
+.viz-cat-count{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.04);padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.07)}
+.viz-bars{display:flex;align-items:flex-end;gap:5px;height:120px;padding:0 0 2px;flex-wrap:wrap}
+.viz-bar{flex-shrink:0;width:36px;cursor:pointer;border-radius:3px 3px 0 0;position:relative;transition:filter .2s,transform .15s;transform-origin:bottom}
+.viz-bar:hover{filter:brightness(1.35);transform:scaleY(1.04)}
+.viz-bar.active{filter:brightness(1.5);outline:1px solid rgba(255,255,255,.35)}
+.viz-cards{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.viz-card{display:none;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:16px 18px;animation:fadeIn .25s ease}
+.viz-card.visible{display:block}
+.viz-card-num{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px}
+.viz-card-title{font-family:"Playfair Display",serif;font-size:.98rem;color:var(--parchment);margin-bottom:12px;line-height:1.35}
+.viz-card-verse{background:rgba(255,255,255,.02);border-left:2px solid;padding:10px 14px;margin-bottom:8px;border-radius:0 3px 3px 0}
+.viz-card-verse:last-of-type{margin-bottom:0}
+.viz-card-vref{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.viz-card-vtext{font-style:italic;font-size:.88rem;color:var(--dim);line-height:1.65}
+.viz-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.viz-leg{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--muted)}
+.viz-leg-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+.viz-total-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);border-radius:4px;padding:10px 18px;margin-bottom:36px;font-size:.9rem;color:var(--parchment)}
+.viz-total-num{font-family:"Playfair Display",serif;font-size:1.6rem;color:var(--gold);line-height:1}
+@media(max-width:640px){.viz-bars{height:90px}.viz-bar{width:26px}.viz-cards{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -248,6 +339,11 @@ footer{text-align:center;padding:38px;border-top:1px solid rgba(212,160,23,.14);
   <button class="nav-btn" onclick="showSection('filosofos')">φ Filósofos</button>
   <button class="nav-btn" onclick="showSection('diabo')">VIII. O Diabo</button>
   <button class="nav-btn" onclick="showSection('trindade')">IX. A Trindade</button>
+  <button class="nav-btn" onclick="showSection('ciencia')">X. Ciência</button>
+  <button class="nav-btn" onclick="showSection('arqueologia')">XI. Arqueologia</button>
+  <button class="nav-btn" onclick="showSection('religioes')">XII. Religiões</button>
+  <button class="nav-btn" onclick="showSection('fil-religiao')">XIII. Fil. Religião</button>
+  <button class="nav-btn" onclick="showSection('visualizacao')">📊 Visualização</button>
 </nav>
 
 
@@ -1659,6 +1755,26 @@ footer{text-align:center;padding:38px;border-top:1px solid rgba(212,160,23,.14);
     <div class="pi-init" style="background:#3d405b">E</div>
     <div class="pi-name">Epicuro</div>
   </div>
+  <div class="pi-btn" onclick="piToggle('voltaire', this)">
+    <div class="pi-init" style="background:#7d6608">V</div>
+    <div class="pi-name">Voltaire</div>
+  </div>
+  <div class="pi-btn" onclick="piToggle('russell', this)">
+    <div class="pi-init" style="background:#1a5276">R</div>
+    <div class="pi-name">Russell</div>
+  </div>
+  <div class="pi-btn" onclick="piToggle('marx', this)">
+    <div class="pi-init" style="background:#641e16">M</div>
+    <div class="pi-name">Marx</div>
+  </div>
+  <div class="pi-btn" onclick="piToggle('camus', this)">
+    <div class="pi-init" style="background:#1b4332">C</div>
+    <div class="pi-name">Camus</div>
+  </div>
+  <div class="pi-btn" onclick="piToggle('kierkegaard', this)">
+    <div class="pi-init" style="background:#4a235a">Ki</div>
+    <div class="pi-name">Kierkegaard</div>
+  </div>
 </div>
 
 <div id="pe-feuerbach" class="phil-entries">
@@ -1698,6 +1814,39 @@ footer{text-align:center;padding:38px;border-top:1px solid rgba(212,160,23,.14);
 <div id="pe-epicuro" class="phil-entries">
   <div class="pe-item"><div class="pe-section">Formulação clássica (~300 a.C.) — O dilema irresolvível</div><div class="pe-text">"Se Deus quer impedir o mal mas não pode, não é onipotente. Se pode mas não quer, não é bom. Se quer e pode — de onde vem o mal? Se não quer e não pode, por que chamá-lo Deus?" A formulação é anterior ao cristianismo e anterior ao judaísmo monoteísta consolidado. Epicuro identificou a contradição estrutural que toda teologia monoteísta ainda tenta resolver.</div></div>
   <div class="pe-item"><div class="pe-section">O dilema dentro do cânone bíblico</div><div class="pe-text">A contradição de Epicuro não precisa vir de fora da Bíblia — está dentro dela: Isaías 45:7 diz que Deus cria o mal. Jó mostra Deus apostando o sofrimento de um inocente. 1 Reis 22 mostra Deus enviando espírito mentiroso. O Faraó tem o coração endurecido por Deus e é punido por isso. O dilema que Epicuro formulou filosoficamente o texto bíblico documenta narrativamente — sem perceber a contradição.</div></div>
+</div>
+
+<div id="pe-voltaire" class="phil-entries">
+  <div class="pe-item"><div class="pe-section">Tese central — "Écrasons l'infâme" (Esmaguemos a infame)</div><div class="pe-text">Voltaire não era ateu — era deísta: acreditava num criador racional que estabeleceu as leis do universo e depois não interferiu mais. O que atacava não era Deus, mas a Igreja institucional como aparato de poder político, superstição e fanatismo. "Deus criou o homem à sua imagem, e o homem retribuiu o favor." — A religião organizada, para Voltaire, era o mecanismo pelo qual a ignorância governa os inteligentes e o medo governa os corajosos.</div></div>
+  <div class="pe-item"><div class="pe-section">Tolerância religiosa — Traité sur la tolérance (1763)</div><div class="pe-text">Escrito após a execução judicial de Jean Calas, protestante falsamente acusado de matar o filho para impedi-lo de converter-se ao catolicismo. Voltaire demonstrou que o fanatismo religioso não é patologia individual — é produto sistêmico de doutrinas que dividem a humanidade em salvos e condenados. "Aqueles que podem fazer você acreditar em absurdos podem fazer você cometer atrocidades." O princípio é verificável em cada guerra santa, inquisição e perseguição religiosa da história.</div></div>
+  <div class="pe-item"><div class="pe-section">O problema do mal — Cândido (1759)</div><div class="pe-text">Após o terremoto de Lisboa de 1755 — que matou 30-40 mil pessoas em um dia, incluindo crianças que assistiam à missa —, Leibniz havia argumentado que vivemos no "melhor dos mundos possíveis". Voltaire escreveu Cândido como resposta filosófica direta: a personagem atravessa guerras, inquisições, escravidão e catástrofes naturais enquanto o otimista Dr. Pangloss repete que tudo vai bem. A conclusão do livro é o único argumento possível diante do sofrimento gratuito: "Il faut cultiver notre jardin" — devemos cultivar nosso jardim. Ação local, concreta, humana. Não espera teológica.</div></div>
+  <div class="pe-item"><div class="pe-section">Citação máxima para este documento</div><div class="pe-text">"Cada seita, como sabemos, pensa ter a verdade exclusiva. Suponha que toda seita tem razão: deste fato único, que ninguém pode negar, resulta que todas estão erradas." — A pluralidade de verdades reveladas exclusivas é autorrefutatória. Não é argumento externo à religião — é argumento a partir da multiplicidade interna das reivindicações religiosas.</div></div>
+</div>
+
+<div id="pe-russell" class="phil-entries">
+  <div class="pe-item"><div class="pe-section">Por Que Não Sou Cristão (1927) — O argumento da primeira causa</div><div class="pe-text">Russell examina o argumento cosmológico (tudo tem uma causa; logo deve haver uma primeira causa não causada = Deus) e identifica a falácia: "Se tudo deve ter uma causa, então Deus também deve ter uma. Se pode haver algo sem causa, pode ser o universo tanto quanto Deus." A regra "tudo tem uma causa" é aplicada seletivamente — ela é usada para exigir uma causa para o universo mas a exceção é criada arbitrariamente para Deus. Uma premissa que exige exceção ad hoc para o caso que mais importa não é argumento — é petição de princípio.</div></div>
+  <div class="pe-item"><div class="pe-section">O argumento do design — e Darwin</div><div class="pe-text">"No mundo antigo, quando as pessoas não sabiam tanto quanto sabemos sobre como as coisas funcionam, era razoável supor que tudo foi projetado. Mas, quando você chega a Darwin, percebe que a organização dos seres vivos é resultado de processos cegos e graduais." — Russell identifica que o argumento do design perdeu sua premissa principal. A complexidade biológica já tem explicação sem criador. E mesmo que não tivesse: se Deus projetou seres que sofrem desnecessariamente — parasitas que cegam crianças, bactérias que consomem cérebros —, que tipo de designer é esse?</div></div>
+  <div class="pe-item"><div class="pe-section">Cristo como pessoa histórica e moral</div><div class="pe-text">Russell admite que Jesus histórico, se existiu, era uma figura moralmente elevada. Mas identifica problemas: Jesus acreditou no inferno eterno (Marcos 9:43-48) — e nenhum ser de compaixão genuína poderia imaginar um castigo infinito para ofensas finitas. Jesus acreditou que sua geração veria o fim do mundo (Marcos 9:1, Mateus 16:28) — e estava errado. "No tocante à sua sabedoria, há uma ou duas coisas que não são muito sábias."</div></div>
+  <div class="pe-item"><div class="pe-section">Religião e medo — a raiz psicológica</div><div class="pe-text">"A religião é baseada principalmente e primariamente no medo. É parte do desconhecido — e se você puder fazer as pessoas pensarem que há um grande irmão mais velho que vai cuidar de você, pode fazê-las endurecer ao explorador e à brutalidade. A religião tem sido a principal inimiga do progresso moral em cada época." — Russell não argumenta que os religiosos são pessoas ruins: argumenta que o sistema teológico, ao ancorar a moral em autoridade externa em vez de razão, sistematicamente inibe o desenvolvimento moral autônomo.</div></div>
+</div>
+
+<div id="pe-marx" class="phil-entries">
+  <div class="pe-item"><div class="pe-section">Religião como ópio — Crítica da Filosofia do Direito de Hegel (1844)</div><div class="pe-text">"A angústia religiosa é ao mesmo tempo a expressão de angústia real e o protesto contra ela. A religião é o suspiro da criatura oprimida, o sentimento de um mundo sem coração, o espírito de uma situação sem espírito. Ela é o ópio do povo." — Marx não desprezava os religiosos: compreendia a religião como resposta real a sofrimento real. O problema é que o ópio alivia a dor sem curar a doença. A religião, ao projetar a redenção para o pós-morte, reduz a urgência de transformar as condições materiais que produzem o sofrimento no presente.</div></div>
+  <div class="pe-item"><div class="pe-section">Alienação religiosa — O homem faz a religião</div><div class="pe-text">"O homem faz a religião; a religião não faz o homem." — Para Marx, como para Feuerbach (de quem partiu), Deus é uma projeção das qualidades humanas ao infinito. Mas Marx acrescenta a dimensão econômica: a classe dominante usa a religião para justificar hierarquias sociais existentes como vontade divina. "O rei governa por direito divino." "A pobreza é virtude." "A riqueza é bênção." A religião não apenas projeta — ela sanciona. E essa sanção serve a interesses materiais específicos.</div></div>
+  <div class="pe-item"><div class="pe-section">O que sobrevive da crítica de Marx</div><div class="pe-text">A tese mais robusta de Marx não é "religião é falsa" — é "observe quem se beneficia quando a religião prescreve submissão". Historicamente: a Igreja medieval era o maior proprietário de terras da Europa. A Inquisição confiscava bens dos "hereges". Os escravizadores americanos usavam Efésios 6:5 ("escravos, obedecei a vossos senhores") como argumento teológico para a escravidão. A religião não é apenas metafísica — é política. E sua leitura ingênua frequentemente serve ao poder.</div></div>
+</div>
+
+<div id="pe-camus" class="phil-entries">
+  <div class="pe-item"><div class="pe-section">O Absurdo — O Mito de Sísifo (1942)</div><div class="pe-text">Camus parte de uma observação que qualquer pessoa honesta pode verificar: o mundo não tem significado inerente, e a consciência humana exige significado. Essa colisão é o absurdo. Camus identifica três respostas: suicídio físico (recusa da vida), suicídio filosófico (Kierkegaard — o salto de fé que nega o absurdo), e revolta — aceitar o absurdo, não se render a ele, e criar significado apesar de sua ausência cósmica. "É necessário imaginar Sísifo feliz." — Não porque a pedra chegará ao topo, mas porque a luta é em si a resposta humana ao absurdo.</div></div>
+  <div class="pe-item"><div class="pe-section">Crítica ao "salto de fé" — Por que Camus rejeita Kierkegaard</div><div class="pe-text">Kierkegaard, diante do absurdo, propõe o salto: aceitar o irracional como fundamento. Camus respeita a coerência da posição mas recusa a solução: o salto não resolve o absurdo — o suprime. Trocar o desconforto do absurdo por uma crença não verificável não é resposta intelectualmente honesta. É anestesia. Para Camus, a lucidez sobre o absurdo é condição de autenticidade. Abandoná-la — mesmo em troca de conforto — é uma forma de covardia intelectual.</div></div>
+  <div class="pe-item"><div class="pe-section">A Peste (1947) — o absurdo diante do sofrimento real</div><div class="pe-text">O padre Paneloux prega que a peste é castigo divino — leitura teológica do sofrimento como merecido. O médico Rieux não sabe se Deus existe e não se importa: trabalha. Para Camus, essa é a única posição digna diante do sofrimento inocente: não explicação, mas ação. O personagem Tarrou articula o núcleo: "o que me interessa é ser homem." Não a salvação — a humanidade. Não o além — o presente. A resposta ao problema do mal não é teodiceia: é comprometimento com a redução do sofrimento aqui e agora.</div></div>
+</div>
+
+<div id="pe-kierkegaard" class="phil-entries">
+  <div class="pe-item"><div class="pe-section">O outro lado — por que a fé persiste apesar de tudo</div><div class="pe-text">Kierkegaard é incluído aqui não como crítico, mas como o defensor mais intelectualmente honesto da fé religiosa. Sua posição: a fé genuína não ignora as contradições — ela as absorve. "A fé não é uma forma de conhecimento, pois todo conhecimento é ou o conhecimento da eterna ou o conhecimento histórico. Não — a fé é uma convicção a respeito do que ainda está por vir." A fé não é crença no que pode ser verificado — é o salto além do que a razão pode alcançar.</div></div>
+  <div class="pe-item"><div class="pe-section">Os três estádios — estético, ético, religioso</div><div class="pe-text">Para Kierkegaard, a existência passa por três estádios. O estético: viver pelo prazer e experiência. O ético: viver pela lei moral universal. O religioso: o estádio supremo, onde a lei universal pode ser suspensa por relação direta com o Absoluto — como Abraão, que estava disposto a matar Isaac em obediência a Deus, violando a lei ética ("não matarás") por fé. Kierkegaard reconhece que isso parece monstruoso do ponto de vista ético. Isso é precisamente o ponto: a fé genuína é além da ética, não abaixo dela.</div></div>
+  <div class="pe-item"><div class="pe-section">O paradoxo como fundamento — e o que ele revela</div><div class="pe-text">"O paradoxo não é uma concessão ao pensamento — é uma categoria." — A encarnação (Deus eterno tornando-se humano temporal), a ressurreição (morte superada dentro da história), o livre-arbítrio (criatura genuinamente livre criada por onisciência) — todos são contradições lógicas. Kierkegaard não as resolve: as afirma. A fé não acontece apesar do paradoxo, mas através dele. O que isso revela: a religião, na sua forma kierkegaardiana mais honesta, não é um conjunto de proposições verificáveis. É uma postura existencial que aceita o irracional como condição de transcendência.</div></div>
+  <div class="pe-item"><div class="pe-section">Por que este documento precisava de Kierkegaard</div><div class="pe-text">Um documento que examina a Bíblia honestamente precisa incluir o defensor mais honesto da posição que examina. Kierkegaard não é mencionado aqui para ser refutado — mas porque ele representa o que a fé pode ser quando não foge da dificuldade. A diferença entre o cristão que Kierkegaard defende e o que as contradições deste documento expõem é a diferença entre aquele que salta com lucidez e aquele que nunca soube que havia um abismo. Questionar não é necessariamente perder a fé — pode ser o começo de tê-la de verdade.</div></div>
 </div>
 
 </section>
@@ -1999,5 +2148,1356 @@ function renderMap(canvasId, pins, tooltipId) {
   });
 }
 </script>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION XIV — VISUALIZAÇÃO INTERATIVA
+═══════════════════════════════════════════════════════ -->
+<section id="visualizacao" class="section">
+<div class="chapter-header">
+  <div class="chapter-label">Seção XIV — Visualização de Dados</div>
+  <h2 class="chapter-title" style="color:var(--gold)">O Mapa das Contradições</h2>
+  <p class="chapter-intro">Inspirado no trabalho do designer Andy Marlow (2009), que visualizou as 463 contradições bíblicas identificadas por Steve Wells. Cada barra representa uma contradição. Clique em qualquer barra para ler o texto exato dos versículos em conflito e a análise. As cores indicam a categoria. A altura indica a severidade da contradição (1 = discrepância menor, 5 = contradição irresolvível).</p>
+</div>
+
+<div class="viz-total-badge">
+  <div class="viz-total-num" id="viz-total">—</div>
+  <div>contradições mapeadas neste documento, organizadas em <strong id="viz-cat-count">—</strong> categorias</div>
+</div>
+
+<div class="viz-legend" id="viz-legend"></div>
+
+<div id="viz-root"></div>
+</section>
+
+<script>
+// ── DATASET COMPLETO: 648 contradições (SAB + BibViz) ────────────────────────
+// Formato: [numero, titulo_en, categoria]
+// Categorias: sci=Científico, moral=Moral/Crueldade, mis=Misoginia,
+//             homo=LGBTQ+, log=Lógico/Teológico, num=Numérico/Genealógico, text=Textual
+const ALL_SAB = [
+[1,"How many men did the chief of David's captains kill?","num"],
+[2,"Was Abraham justified by faith or works?","log"],
+[3,"How many sons did Abraham have?","num"],
+[4,"Was Abiathar the father or the son of Ahimelech?","text"],
+[5,"Who was Abijam's mother?","text"],
+[6,"How were Abijam and Asa related?","text"],
+[7,"How long was the ark of the covenant at Abinadab's house?","num"],
+[8,"How old was Abram when Ishmael was born?","num"],
+[9,"How many sons did Absalom have?","num"],
+[10,"When did Absalom rebel against David?","text"],
+[11,"The two contradictory creation accounts","sci"],
+[12,"Who Was Achan's father?","text"],
+[13,"How many of Adin's offspring returned from Babylon?","num"],
+[14,"How many of Adonikam's offspring returned from Babylon?","num"],
+[15,"How should adulterers be punished?","moral"],
+[16,"Is it wrong to have sex outside of marriage?","moral"],
+[17,"Was Haman an Agagite?","text"],
+[18,"Was Ahaz buried with his fathers?","text"],
+[19,"When did Ahaziah begin to reign?","text"],
+[20,"How old was Ahaziah when he began to reign?","num"],
+[21,"Did the city of Ai exist after Joshua destroyed it?","text"],
+[22,"What tribe was Aijalon from?","text"],
+[23,"Does God want some to go to hell?","log"],
+[24,"Did Jesus tell his disciples everything?","text"],
+[25,"Was David alone when asking for the holy bread at Nob?","text"],
+[26,"Did Saul and Samuel kill all the Amalekites?","moral"],
+[27,"Who was Amasa's father?","text"],
+[28,"How should the Ammonites be treated?","moral"],
+[29,"Who was Anah?","text"],
+[30,"Who drove the Anakim from Hebron?","text"],
+[31,"From what were the animals created?","sci"],
+[32,"Where did Jesus first appear to the eleven disciples after the resurrection?","text"],
+[33,"How many of Arah's offspring returned from Babylon?","num"],
+[34,"What was in the Ark of the Covenant?","text"],
+[35,"Was Asa perfect?","text"],
+[36,"Did Asa remove the high places?","text"],
+[37,"How many of Asaph's offspring returned from Babylon?","num"],
+[38,"When did Jesus ascend into heaven?","text"],
+[39,"Did Peter ask Jesus where he was going?","text"],
+[40,"On what did Jesus ride into Jerusalem?","text"],
+[41,"Is the day of the Lord at hand?","log"],
+[42,"How many of Azgad's offspring returned from Babylon?","num"],
+[43,"When did Baasha die?","text"],
+[44,"How many languages were there before the Tower of Babel was built?","text"],
+[45,"How long was the Babylonian Captivity?","text"],
+[46,"How many of Bani's offspring returned from Babylon?","num"],
+[47,"In whose name is baptism to be performed?","text"],
+[48,"Did Jesus baptize anyone?","text"],
+[49,"Did Jesus tell his apostles to go barefoot and without a staff?","text"],
+[50,"Who was to blame for original sin?","log"],
+[51,"Who was Bashemath's father?","text"],
+[52,"What was the volume of the molten sea in Solomon's temple?","sci"],
+[53,"How many of Bebai's offspring returned from Babylon?","num"],
+[54,"When did Saul become David's enemy?","text"],
+[55,"Who named Beersheba?","text"],
+[56,"Where did Joseph and Mary live before the birth of Jesus?","text"],
+[57,"Should we believe everything?","log"],
+[58,"How many believers were there at the time of the ascension?","num"],
+[59,"How old was Benjamin when his clan migrated to Egypt?","num"],
+[60,"Who were the sons of Benjamin?","text"],
+[61,"Were Naaman and Ard the sons or the grandsons of Benjamin?","num"],
+[62,"Who asked for the best seats in heaven?","text"],
+[63,"When did Jacob rename Luz to Bethel?","text"],
+[64,"How many of Bethlehem and Netophah's offspring returned from Babylon?","num"],
+[65,"Where did Jesus cure the blind man?","text"],
+[66,"How many of Bezai's offspring returned from Babylon?","num"],
+[67,"How many of Bigvai's offspring returned from Babylon?","num"],
+[68,"Who is the most blessed woman?","mis"],
+[69,"Who makes people deaf and blind?","log"],
+[70,"How many blind men were healed near Jericho?","num"],
+[71,"Does the blood of animal sacrifices take away sin?","log"],
+[72,"Should we bear each other's burdens?","log"],
+[73,"Who buried Jesus?","text"],
+[74,"On what day did the temple burn?","text"],
+[75,"Did God command the Israelites to make him burnt offerings?","log"],
+[76,"Who appeared to Moses in the burning bush?","text"],
+[77,"What became of Cain?","text"],
+[78,"Was Jesus taken to Caiaphas or Annas first?","text"],
+[79,"Will those who call on the Lord be delivered?","log"],
+[80,"Can God do anything?","log"],
+[81,"How long was the Egyptian Captivity?","text"],
+[82,"Does God prefer castrated men?","mis"],
+[83,"Is casting out devils a sign of a true Christian?","text"],
+[84,"Did God kill all the Egyptian cattle in the sixth plague?","text"],
+[85,"Is it OK to take a census?","moral"],
+[86,"Did the Centurion ask Jesus directly to help his slave?","text"],
+[87,"What did the Centurion call Jesus when he died?","text"],
+[88,"How high was the chapiter?","num"],
+[89,"How many men did David kill?","num"],
+[90,"Is childbearing sinful?","mis"],
+[91,"Is it a good thing to be childish?","log"],
+[92,"How did Jesus respond when questioned by the high priest?","text"],
+[93,"Is circumcision required?","log"],
+[94,"To whom were the cities of Exhtaol and Zoreah given?","text"],
+[95,"Did the cock crow before or after Peter's denial?","text"],
+[96,"What color was Jesus' robe?","text"],
+[97,"Did Jesus forewarn the apostles of his death and resurrection?","text"],
+[98,"Is God the author of confusion?","log"],
+[99,"Is it OK to covet?","moral"],
+[100,"Did Jesus say before the cock crow or before the cock crows twice?","text"],
+[101,"Did Jesus ask God to save him from crucifixion?","text"],
+[102,"Is it OK to curse people?","moral"],
+[103,"Will God curse the earth?","log"],
+[104,"Are those who obey the law cursed?","log"],
+[105,"When did the Temple curtain rip?","text"],
+[106,"Who carried Jesus' cross?","text"],
+[107,"When was the city of Dan named?","text"],
+[108,"Generations from David to the Babylonian Captivity","num"],
+[109,"How did David kill Goliath?","text"],
+[110,"The sons of David born in Hebron","num"],
+[111,"Did David sin?","log"],
+[112,"Which sons of David were born in Jerusalem?","num"],
+[113,"From which of David's sons was Jesus descended?","text"],
+[114,"When did the women (or woman) arrive at the sepulchre?","text"],
+[115,"Is death final?","log"],
+[116,"How many of Delaiah, Tobiah, and Nekoda's offspring returned from Babylon?","num"],
+[117,"To whom did Peter deny knowing Jesus?","text"],
+[118,"Who destroyed Sodom and Gomorrah?","text"],
+[119,"Can the devil capture us at will?","log"],
+[120,"Is the devil tied up or free to roam?","log"],
+[121,"Who can cast out devils in the name of Jesus?","text"],
+[122,"Where did the devils ask not to go?","text"],
+[123,"Does God desire animal sacrifices?","log"],
+[124,"Must everyone die?","log"],
+[125,"Should believers discuss their faith with non-believers?","log"],
+[126,"Is divorce ever permissible?","mis"],
+[127,"Does anyone ever do anything good?","log"],
+[128,"Who put the robe on Jesus?","text"],
+[129,"Did Jesus drink on the cross?","text"],
+[130,"When did the earth dry after the flood?","sci"],
+[131,"Does God dwell in darkness or in light?","log"],
+[132,"Will the earth last forever?","sci"],
+[133,"What kind of animals may we eat?","moral"],
+[134,"How should the Edomites be treated?","moral"],
+[135,"May a eunuch enter into the congregation of the Lord?","homo"],
+[136,"Did Lot's daughters think God had killed every man except Lot?","text"],
+[137,"Does the gospel of Luke contain everything that Jesus did?","text"],
+[138,"Did Jesus, Mary, and Joseph go to Egypt or Nazareth?","text"],
+[139,"How many disciples did Jesus appear to in his first post resurrection appearance?","num"],
+[140,"Did the eleven disciples believe the two men?","text"],
+[141,"Whom did Elhanan kill?","text"],
+[142,"Was John the Baptist Elijah?","text"],
+[143,"When will the end of the world come?","log"],
+[144,"How should we treat our enemies?","moral"],
+[145,"Has anyone ever ascended into heaven?","log"],
+[146,"Did Enoch die?","text"],
+[147,"Was Enoch the sixth or the seventh from Adam?","num"],
+[148,"Will Ephraim return to Egypt?","text"],
+[149,"When was Eve created?","text"],
+[150,"Is everyone descended from Adam and Eve?","sci"],
+[151,"Is God the creator of evil?","log"],
+[152,"Do evildoers prosper?","log"],
+[153,"Did Moses see God face to face?","text"],
+[154,"Is Salvation by faith alone?","log"],
+[155,"Were the men with Paul knocked to the ground?","text"],
+[156,"Is it possible to fall from grace?","log"],
+[157,"How many years of famine?","num"],
+[158,"Is it OK to call your father (or anyone else) father?","log"],
+[159,"Did Moses fear the king?","text"],
+[160,"Should we look for signs in the heavens?","log"],
+[161,"Should we fear God?","log"],
+[162,"Who bought the potter's field?","text"],
+[163,"When did the cursed fig tree die?","text"],
+[164,"When did Jesus curse the fig tree?","text"],
+[165,"Was Jesus the first to rise from the dead?","log"],
+[166,"To whom did Jesus make his first post-resurrection appearance?","text"],
+[167,"How long was the ark afloat?","sci"],
+[168,"How long did the flood last?","sci"],
+[169,"Did everyone (except for Noah and his family) die in the flood?","sci"],
+[170,"Will the righteous flourish?","log"],
+[171,"Which flying creeping things may we eat?","moral"],
+[172,"Is it OK to call someone a fool?","log"],
+[173,"Is it good to be foolish?","log"],
+[174,"Who forces non-believers to disbelieve?","log"],
+[175,"How many Philistine foreskins did David buy his first wife with?","num"],
+[176,"Does God forgive sins?","log"],
+[177,"How many generations from Jesus to Abraham?","num"],
+[178,"Can God be found?","log"],
+[179,"From what were the fowls created?","sci"],
+[180,"Do humans have free will?","log"],
+[181,"Were the disciples frightened or gladdened when they saw Jesus?","text"],
+[182,"Does God ever get furious?","log"],
+[183,"Who gave the law to Moses?","text"],
+[184,"Did God give Gehazi leprosy?","text"],
+[185,"Genealogy of Jesus","num"],
+[186,"When was the Holy Ghost given?","text"],
+[187,"Does God lie?","log"],
+[188,"Does God love everyone?","log"],
+[189,"Does God know what is in everyone's heart?","log"],
+[190,"How many gods are there?","log"],
+[191,"Are we all God's children?","log"],
+[192,"Does God work on the Sabbath?","log"],
+[193,"How much gold, silver, and clothing did the people give?","num"],
+[194,"Who killed Goliath?","text"],
+[195,"Is anyone good?","log"],
+[196,"Who was the greatest: Jesus, Solomon, or John the Baptist?","text"],
+[197,"Is it OK for men to have long hair?","moral"],
+[198,"Who was Noah's youngest son?","text"],
+[199,"Is it good to be happy?","log"],
+[200,"Was Mary Magdalen happy or sad when she saw the risen Jesus?","text"],
+[201,"Who hardened the Pharaoh's heart?","log"],
+[202,"Should we follow our own hearts?","log"],
+[203,"When was heaven created?","sci"],
+[204,"Does Hell exist?","log"],
+[205,"Does God help in times of need?","log"],
+[206,"Who was Heman's father?","text"],
+[207,"Did Herod think Jesus was John the Baptist?","text"],
+[208,"Where did Joseph's brothers find the hidden money?","text"],
+[209,"How many talents of gold did Hiram send Solomon?","num"],
+[210,"Is only God holy?","log"],
+[211,"Who sent the Holy Ghost?","text"],
+[212,"How should homosexuals be treated?","homo"],
+[213,"Where did Aaron die?","text"],
+[214,"How many horsemen did David take?","num"],
+[215,"When (at what time of day) was Jesus crucified?","text"],
+[216,"Does God approve of human sacrifice?","moral"],
+[217,"Were humans created before or after the other animals?","sci"],
+[218,"If a husband believes, is his wife saved also?","log"],
+[219,"Which tribe was Hyram from?","text"],
+[220,"Was Zechariah Iddo's son or grandson?","text"],
+[221,"Is it OK to make images?","moral"],
+[222,"Which came first: the calling of Peter and Andrew or the imprisonment of John?","text"],
+[223,"Is incest forbidden?","moral"],
+[224,"Are we punished for the sins of others?","log"],
+[225,"Did Saul inquire of the Lord?","text"],
+[226,"Were the men or angels inside or outside the tomb when the women arrived?","text"],
+[227,"Will God destroy those that intermarry?","moral"],
+[228,"Can God stop iron chariots?","log"],
+[229,"How old was Ishmael when he was abandoned by Abraham?","num"],
+[230,"When was King Jabin killed?","text"],
+[231,"Who bought the sepulcher in Shechem from the sons of Hamor?","text"],
+[232,"Where was Jacob buried?","text"],
+[233,"How many were in Jacob's family when they came into Egypt?","num"],
+[234,"Was Jairus' daughter alive when Jesus was approached?","text"],
+[235,"Did Jeconiah have any sons?","text"],
+[236,"Was Jeconiah the son or grandson of Josiah?","text"],
+[237,"When did Jehoash become king of Israel?","text"],
+[238,"How long did Jehoash reign?","num"],
+[239,"How old was Jehoachin when he began to reign?","num"],
+[240,"Who succeeded Jehoiakim as king?","text"],
+[241,"Did Jehoiakim die in Babylon or near Jerusalem?","text"],
+[242,"Did Jehoshaphat remove the high places?","text"],
+[243,"Did Abraham know God's name?","text"],
+[244,"Was Jehu the son or grandson of Nimshi?","text"],
+[245,"When was the blind man (or men) healed?","text"],
+[246,"Did Paul go to Jerusalem from Damascus immediately after his conversion?","text"],
+[247,"How many sons did Jesse have?","num"],
+[248,"When was Jesus born?","text"],
+[249,"Was Joseph the father of Jesus?","text"],
+[250,"Did Jesus know everything?","log"],
+[251,"Did Jesus bear witness of himself?","text"],
+[252,"What will happen to Jews when they die?","log"],
+[253,"Will there be many Jews?","log"],
+[254,"What was Jesus H. Christ's real name?","text"],
+[255,"Did God commend or condemn Jehu for the killings at Jezreel?","text"],
+[256,"Where was Joash buried?","text"],
+[257,"Who brought evil on Job?","log"],
+[258,"Who cast Jonah into the sea?","text"],
+[259,"Who was Jesus' paternal grandfather?","num"],
+[260,"Where did Josiah die?","text"],
+[261,"How did King Josiah die?","text"],
+[262,"How long did Jotham reign?","num"],
+[263,"How did Judas die?","text"],
+[264,"Did Judas identify Jesus with a kiss?","text"],
+[265,"To judge or not to judge","log"],
+[266,"Does Jesus judge people?","log"],
+[267,"Has there ever been a just person?","log"],
+[268,"Is anyone justified?","log"],
+[269,"Was Keturah Abraham's wife or concubine?","text"],
+[270,"To kill or not to kill","moral"],
+[271,"Why did God reject Saul as king?","text"],
+[272,"Who was the father of Kish?","text"],
+[273,"Does God know and see everything?","log"],
+[274,"Who was Korah's father?","text"],
+[275,"Did God bury alive all of Korah's children?","text"],
+[276,"Who was Laban's father?","text"],
+[277,"What were the last words of Jesus?","text"],
+[278,"Should we obey human or divine law?","log"],
+[279,"Is it wrong to lie?","log"],
+[280,"What is the human lifespan?","sci"],
+[281,"How many of Lod, Hadid, and Ono's offspring returned from Babylon?","num"],
+[282,"Has the sun ever stood still in the sky for 24 hours?","sci"],
+[283,"Who is the Lord of this world?","log"],
+[284,"Was Lot righteous?","text"],
+[285,"Should we love or hate others?","moral"],
+[286,"Was Mahli the son of Levi?","text"],
+[287,"Will everyone see the majesty of God?","log"],
+[288,"Was David a man of war before he fought Goliath?","text"],
+[289,"Did Elisha receive Elijah's mantle before or after Elijah was taken up?","text"],
+[290,"Is marriage a good thing?","mis"],
+[291,"Should Christians be concerned with material things?","log"],
+[292,"Is it OK to eat meat sacrificed to other gods?","moral"],
+[293,"Was Moses meek?","text"],
+[294,"Is God merciful?","log"],
+[295,"How many children did Michal have?","num"],
+[296,"Did the Israelites kill every male in Midian?","moral"],
+[297,"How many did God kill for committing whoredom with the daughters of Moab?","num"],
+[298,"How should the Moabites be treated?","moral"],
+[299,"Did any Moabite enter the congregation of the Lord?","text"],
+[300,"Is money good or bad?","log"],
+[301,"Was Moses in good mental and physical health at age 120?","text"],
+[302,"Who was Moses' father-in-law?","text"],
+[303,"Was Moses a good speaker?","text"],
+[304,"Did Jesus preach his first sermon on a mountain or a plain?","text"],
+[305,"What is God's name?","log"],
+[306,"What's new?","log"],
+[307,"What is the correct recipe for the new moon sacrifice?","text"],
+[308,"If God likes you, will everyone else like you too?","log"],
+[309,"When did Noah enter the ark?","text"],
+[310,"How should nonbelievers be treated?","moral"],
+[311,"Is it OK to take oaths?","moral"],
+[312,"Are those who believe that Jesus is the Christ of God?","log"],
+[313,"How many officers did Solomon have?","num"],
+[314,"How old was Abraham when he left Haran?","num"],
+[315,"Was the tomb opened or closed when the women arrived?","text"],
+[316,"Are the laws of the Old Testament still binding?","log"],
+[317,"How many overseers did Solomon have?","num"],
+[318,"Who owns the earth?","log"],
+[319,"How many of Pahathmoab, Jeshua, and Joab's offspring returned from Babylon?","num"],
+[320,"How should parents be treated?","moral"],
+[321,"How many days is unleavened bread to be eaten during the passover?","num"],
+[322,"When was Jesus crucified?","text"],
+[323,"Did Paul see Jesus on the road to Damascus?","text"],
+[324,"Did Paul visit all of the disciples when he went to Jerusalem after his conversion?","text"],
+[325,"Is God warlike or peaceful?","log"],
+[326,"Is the law of God perfect?","log"],
+[327,"Is it OK to use perfume?","log"],
+[328,"Who wrote the Pentateuch?","text"],
+[329,"How did Peter find out that Jesus was the Messiah?","text"],
+[330,"Where did Peter and Andrew live?","text"],
+[331,"Were the Pharisees baptized by John?","text"],
+[332,"Can women be church leaders?","mis"],
+[333,"How high were the pillars?","num"],
+[334,"Were plants created before or after humans?","sci"],
+[335,"Should we try to please others?","log"],
+[336,"How many children of the porters returned from Babylon?","num"],
+[337,"How many men were possessed with devils?","num"],
+[338,"What did Jesus do after his baptism?","text"],
+[339,"How much power did Jesus have?","log"],
+[340,"Do Christians know how to pray?","log"],
+[341,"Should you pray for everyone?","log"],
+[342,"When David fled to Nob, what was the priest's name?","text"],
+[343,"On what day of the month was Jehoiachin released from prison?","num"],
+[344,"Should Christians pray in public?","log"],
+[345,"Is every word of God pure?","log"],
+[346,"Was Rahab saved by faith or works?","log"],
+[347,"Who raised Jesus from the dead?","log"],
+[348,"Was Jesus a ransom for many or a ransom for all?","log"],
+[349,"Can God be found through reason alone?","log"],
+[350,"Did Mary Magdalene recognize Jesus when he first appeared to her?","text"],
+[351,"Should we rejoice when our enemies suffer?","moral"],
+[352,"Is it OK for a divorced woman to remarry?","mis"],
+[353,"Should we rend our clothes?","log"],
+[354,"Does God repent?","log"],
+[355,"Does God respect anyone?","log"],
+[356,"Did both thieves revile Jesus?","text"],
+[357,"Is wealth a sign of righteousness or of wickedness?","log"],
+[358,"Has there ever been a righteous person?","log"],
+[359,"Does righteousness come from following the Law?","log"],
+[360,"Is it necessary to keep the Sabbath?","log"],
+[361,"How should Sabbath-breakers be punished?","moral"],
+[362,"Who may offer sacrifices to God?","log"],
+[363,"Who was the father of Salah?","num"],
+[364,"Did the Samaritans receive Jesus?","text"],
+[365,"Should the gospel be preached to everyone?","log"],
+[366,"When was the last time that Samuel saw Saul?","text"],
+[367,"Who was Samuel's firstborn son?","text"],
+[368,"Did Sarah have faith that she would conceive?","text"],
+[369,"When did Satan enter Judas?","text"],
+[370,"How did Saul die?","text"],
+[371,"Did all of Saul's family die with him?","text"],
+[372,"When did Saul meet David?","text"],
+[373,"When did 'Is Saul among the prophets?' become a proverb?","text"],
+[374,"Who were Saul's sons?","num"],
+[375,"What must you do to be saved?","log"],
+[376,"Were the Israelites to spare the trees in the countries they invaded?","moral"],
+[377,"Did Jesus have secret teachings?","text"],
+[378,"Was Sisera murdered in his sleep?","text"],
+[379,"Is all Scripture inspired by God?","log"],
+[380,"Should we let others see our good works?","log"],
+[381,"Can God be seen?","log"],
+[382,"How many of Senaah's offspring returned from Babylon?","num"],
+[383,"Should you serve God alone?","log"],
+[384,"What does the earth set upon?","sci"],
+[385,"How should a man who has sex with a menstruating woman be punished?","mis"],
+[386,"Do bad things happen to good people?","log"],
+[387,"Did Jesus perform many signs and wonders?","text"],
+[388,"What did Judas do with the silver?","text"],
+[389,"Do Christians sin?","log"],
+[390,"Where did Moses receive the Ten Commandments?","text"],
+[391,"How many singing men and women returned from Babylon?","num"],
+[392,"Were the men or angels inside the tomb sitting or standing?","text"],
+[393,"In Jesus' response to the rich young man, what was the sixth commandment?","text"],
+[394,"What was Jonathan's first slaughter?","text"],
+[395,"Does God sleep?","log"],
+[396,"How many valiant men drew the sword in Israel and Judah as counted by Joab?","num"],
+[397,"Who brought Joseph into Egypt?","text"],
+[398,"Was Solomon David's second or fourth son by Bathsheba?","num"],
+[399,"What was Solomon's payment to Hiram?","num"],
+[400,"When did Solomon's reign begin?","text"],
+[401,"Was Jesus the son of David?","text"],
+[402,"How many sons does God have?","log"],
+[403,"How many sons did Gideon have?","num"],
+[404,"Who were the sons of Heman?","text"],
+[405,"Was Jesus silent during his trial before Pilate?","text"],
+[406,"How did Jesus cure the blind man?","text"],
+[407,"Does God have a body?","log"],
+[408,"How many stalls did Solomon have?","num"],
+[409,"When were the stars made?","sci"],
+[410,"Is it wrong to steal?","moral"],
+[411,"Did Joshua remove the twelve stones from the Jordan River?","text"],
+[412,"How should strangers be treated?","moral"],
+[413,"Were the Philistines subdued all the days of Samuel?","text"],
+[414,"Why did God turn the sundial back ten degrees?","sci"],
+[415,"Is Jesus peaceful?","log"],
+[416,"When did Jesus' temple tantrum occur?","text"],
+[417,"Where did Jesus tell his disciples to go after his resurrection?","text"],
+[418,"Did the women immediately tell the disciples?","text"],
+[419,"Did Jesus say, Destroy this temple, and in three days I will raise it up?","text"],
+[420,"Can God be tempted?","log"],
+[421,"Who tempted David to number Israel?","log"],
+[422,"Has God ever tempted anyone?","log"],
+[423,"How old was Terah when he died?","num"],
+[424,"Is it OK to test (or tempt) God?","log"],
+[425,"Can thieves go to heaven?","log"],
+[426,"At his baptism, did God address Jesus directly?","text"],
+[427,"How much did David pay for the threshing floor?","num"],
+[428,"Should you speak in tongues?","log"],
+[429,"Was it OK to touch the risen Jesus before his ascension?","text"],
+[430,"When did the transfiguration occur?","text"],
+[431,"May Adam eat from any tree?","text"],
+[432,"What were the twelve (or thirteen) tribes of Israel?","num"],
+[433,"How many of each clean animal did Noah take into the ark?","sci"],
+[434,"Is there an unforgivable sin?","log"],
+[435,"Is it OK to marry (or stay married to) unbelievers?","mis"],
+[436,"Where did God kill Uzza?","text"],
+[437,"What did the soldiers give Jesus to drink?","text"],
+[438,"Did Jesus go to heaven after he died but before his ascension?","log"],
+[439,"Did the men with Paul hear the voice?","text"],
+[440,"Where did Moses get water from a rock?","text"],
+[441,"How did Moses get water out of the rock?","text"],
+[442,"Does God ever tire?","log"],
+[443,"Was Jonah swallowed by a fish or a whale?","sci"],
+[444,"Who (or what) is the ransom for the righteous?","log"],
+[445,"Who created heaven and earth?","log"],
+[446,"Who made the ark of the covenant?","text"],
+[447,"Who wrote the (second set of) ten commandments?","text"],
+[448,"Does God destroy both the righteous and the wicked?","log"],
+[449,"Do the wicked live long?","log"],
+[450,"Is God's will always done in heaven?","log"],
+[451,"Is wisdom a good thing?","log"],
+[452,"Does wisdom make people happy?","log"],
+[453,"How many men were in the king's presence?","num"],
+[454,"Who is for or against Jesus?","log"],
+[455,"Who did the women see at the tomb?","text"],
+[456,"How many women came to the sepulchre?","text"],
+[457,"Where did the women watching the crucifixion stand?","text"],
+[458,"Can only God work wonders?","log"],
+[459,"How are people judged by God?","log"],
+[460,"How many of Zattu's offspring returned from Babylon?","num"],
+[461,"Who was Zechariah's father?","num"],
+[462,"Did Zedekiah's eyes behold the king of Babylon?","text"],
+[463,"Who was Zerubbabel's father?","num"],
+[464,"Where does God dwell?","log"],
+[465,"Did God call Abraham before or after he moved to Haran?","text"],
+[466,"God good to all, or just a few?","log"],
+[467,"War or Peace?","log"],
+[468,"Who is the father of Joseph?","num"],
+[469,"Who was at the Empty Tomb?","text"],
+[470,"Is Jesus equal to or lesser than?","log"],
+[471,"Which first: beasts or man?","sci"],
+[472,"How many stalls and horsemen?","num"],
+[473,"Is it folly to be wise or not?","log"],
+[474,"Human vs. ghostly impregnation","log"],
+[475,"The sins of the father","log"],
+[476,"Rabbits do not chew their cud","sci"],
+[477,"Fowl from waters or ground?","sci"],
+[478,"Odd genetics in the Bible","sci"],
+[479,"The shape of the earth","sci"],
+[480,"Snakes do not eat dirt","sci"],
+[481,"Earth supported? Heaven supported too","sci"],
+[482,"The hydrological cycle","sci"],
+[483,"Order of creation","sci"],
+[484,"Moses' personality","text"],
+[485,"Righteous live?","log"],
+[486,"Jesus' first sermon: plain or mount?","text"],
+[487,"Jesus' last words","text"],
+[488,"Years of famine","num"],
+[489,"The genealogy of Jesus","num"],
+[490,"Can God be seen?","log"],
+[491,"Cruel and ferocious or kind and merciful?","log"],
+[492,"Does God tempt?","log"],
+[493,"Judas died how?","text"],
+[494,"Ascend to heaven","log"],
+[495,"What was Jesus' prediction regarding Peter's denial?","text"],
+[496,"How many times did the cock crow?","text"],
+[497,"How many beatitudes in the Sermon on the Mount?","num"],
+[498,"Does every man sin?","log"],
+[499,"Who bought potter's field?","text"],
+[500,"Who prophesied the potter's field?","text"],
+[501,"Do you answer a fool?","log"],
+[502,"How many children did Michal, the daughter of Saul, have?","num"],
+[503,"How old was Jehoiachin when he began to reign?","num"],
+[504,"Marriage: good or bad?","mis"],
+[505,"Did those with Saul/Paul at his conversion hear a voice?","text"],
+[506,"Where was Jesus three days after his baptism?","text"],
+[507,"How many apostles were in office between the resurrection and ascension?","num"],
+[508,"Judging others","log"],
+[509,"Good deeds: visible or hidden?","log"],
+[510,"For or against Jesus?","log"],
+[511,"Whom did they see at the tomb?","text"],
+[512,"Does God change?","log"],
+[513,"Destruction of cities: Jeremiah or Zechariah?","text"],
+[514,"Whose sepulchers?","text"],
+[515,"When is the second coming?","log"],
+[516,"Solomon's overseers: how many?","num"],
+[517,"The mother of Abijah","text"],
+[518,"What was the color of the robe placed on Jesus during his trial?","text"],
+[519,"What did they give him to drink?","text"],
+[520,"How long was Jesus in the tomb?","text"],
+[521,"Is God satisfied with his works?","log"],
+[522,"Does God dwell in temples?","log"],
+[523,"Does God dwell in light or darkness?","log"],
+[524,"Can God be seen or heard?","log"],
+[525,"Does God get tired?","log"],
+[526,"Does God see and know all things?","log"],
+[527,"Does God know the hearts of men?","log"],
+[528,"Is God all powerful?","log"],
+[529,"Can God be changed?","log"],
+[530,"Is God just and impartial?","log"],
+[531,"Is God the author of evil?","log"],
+[532,"Does God give freely or withhold his blessings?","log"],
+[533,"Is God to be found by those who seek him?","log"],
+[534,"Is God cruel and destructive or kind and merciful?","log"],
+[535,"How long and fierce is God's anger?","log"],
+[536,"Does God want burnt offerings and sacrifices?","log"],
+[537,"Does God accept or forbid human sacrifices?","moral"],
+[538,"Does God tempt people?","log"],
+[539,"Does God ever lie?","log"],
+[540,"Does God destroy man for his wickedness?","log"],
+[541,"Can God's attributes be known?","log"],
+[542,"Is it okay to rob people?","moral"],
+[543,"Is it okay to lie?","log"],
+[544,"Is it okay to hate the Edomites?","moral"],
+[545,"Is it okay to kill?","moral"],
+[546,"Should the blood-shedder be put to death?","moral"],
+[547,"Is it okay to make images?","moral"],
+[548,"Is slavery and oppression okay?","moral"],
+[549,"Is improvidence okay?","log"],
+[550,"Is it okay to get angry?","log"],
+[551,"Are good works to be seen of men?","log"],
+[552,"Is it okay to judge others?","log"],
+[553,"Did Jesus teach physical resistance?","log"],
+[554,"Should you fear death?","log"],
+[555,"Is it okay to pray in public?","log"],
+[556,"Is it okay to ask for things while praying?","log"],
+[557,"Is it okay to have long hair?","mis"],
+[558,"Should you get circumcised?","moral"],
+[559,"Should you follow the Sabbath?","log"],
+[560,"Why was the Sabbath instituted?","text"],
+[561,"Should you do work on the Sabbath?","log"],
+[562,"Should you be baptized?","log"],
+[563,"What kind of animals can you eat?","moral"],
+[564,"Is it okay to take an oath?","log"],
+[565,"Is it okay to get married?","mis"],
+[566,"Can you get divorced?","mis"],
+[567,"Is adultery okay?","moral"],
+[568,"Is it okay to marry your sister?","homo"],
+[569,"Is it okay to marry your brother's widow?","mis"],
+[570,"Is it okay to hate your relatives?","moral"],
+[571,"Is it okay to drink alcohol or get drunk?","log"],
+[572,"Should you obey your rulers?","log"],
+[573,"Do women have rights?","mis"],
+[574,"Should you obey both God and your masters?","moral"],
+[575,"Does an unpardonable sin exist?","log"],
+[576,"Was man created before or after the animals?","sci"],
+[577,"Do seed time and harvest ever cease?","sci"],
+[578,"Did all the cattle/horses of Egypt die?","text"],
+[579,"Did Moses fear Pharaoh?","text"],
+[580,"How many died of the plague?","num"],
+[581,"Was John the Baptist Elias?","text"],
+[582,"Who was the father of Mary's husband?","num"],
+[583,"How many generations from Abraham to David?","num"],
+[584,"How many generations from the Babylonian captivity to Jesus?","num"],
+[585,"Was the infant Jesus taken into Egypt?","text"],
+[586,"Was Jesus tempted in the wilderness?","text"],
+[587,"Where did Jesus preach his first sermon?","text"],
+[588,"Was John imprisoned when Jesus went into Galilee?","text"],
+[589,"Were Jesus' disciples told to go forth with staff and sandals?","text"],
+[590,"Which woman besought Jesus?","text"],
+[591,"How many blind men besought Jesus?","num"],
+[592,"How many thieves reviled Jesus?","text"],
+[593,"When did Satan enter into Judas?","text"],
+[594,"Who purchased the potter's field?","text"],
+[595,"When did they come to the sepulchre?","text"],
+[596,"How many angels were at the sepulchre?","num"],
+[597,"How many nights was Jesus in the grave?","num"],
+[598,"When was the holy ghost bestowed?","text"],
+[599,"Where were the disciples commanded to go immediately after the resurrection?","text"],
+[600,"Where did Jesus first appear to the eleven disciples?","text"],
+[601,"Where did Jesus ascend?","text"],
+[602,"Did Paul's attendants hear a miraculous voice?","text"],
+[603,"Where did Abraham depart to?","text"],
+[604,"Was Keturah Abraham's wife or concubine?","text"],
+[605,"Did Abraham's children require interposition of Providence?","text"],
+[606,"Who bought the sepulchre from Hamor?","text"],
+[607,"Was Canaan promised and given to Abraham and his seed?","text"],
+[608,"Who did Elhanan kill?","text"],
+[609,"Did God or Satan tempt David to number the people of Israel?","log"],
+[610,"How many men did Israel and Judah have?","num"],
+[611,"Did David sin by counting the people?","log"],
+[612,"How many years of famine for David's sin?","num"],
+[613,"How long should David's throne endure?","log"],
+[614,"Are Jesus Christ and God equal?","log"],
+[615,"Is Jesus all-powerful?","log"],
+[616,"Was the law superseded by the Christian dispensation?","log"],
+[617,"Was Jesus' mission peace?","log"],
+[618,"Did Jesus receive testimony from men?","text"],
+[619,"Is Jesus' witness of himself true?","text"],
+[620,"Did Jesus lay down his life for friends or enemies?","log"],
+[621,"Was it lawful for the Jews to kill Jesus?","text"],
+[622,"Are children punished for the sins of their parents?","log"],
+[623,"Is man justified by faith alone?","log"],
+[624,"Can you fall from grace?","log"],
+[625,"Is anybody without sin?","log"],
+[626,"Are the dead resurrected?","log"],
+[627,"Are reward and punishment bestowed in this world?","log"],
+[628,"Is annihilation or endless misery the portion of mankind?","log"],
+[629,"Will the Earth ever be destroyed?","sci"],
+[630,"Does evil happen to the godly?","log"],
+[631,"Are good and prosperity or misery the lot of the godly?","log"],
+[632,"Is worldly prosperity a reward or a curse?","log"],
+[633,"Is the Christian yoke easy?","log"],
+[634,"Is the fruit of God's spirit love and gentleness or fury and vengeance?","log"],
+[635,"Are poverty or riches a blessing?","log"],
+[636,"Is wisdom a source of enjoyment or grief?","log"],
+[637,"Is a good name a blessing or curse?","log"],
+[638,"Is it okay to laugh?","log"],
+[639,"Is there a remedy for foolishness?","log"],
+[640,"Should a fool be answered according to his folly?","log"],
+[641,"Is temptation desired?","log"],
+[642,"Is prophecy a sure thing?","log"],
+[643,"How many years will men live?","sci"],
+[644,"Is every animal afraid of man?","sci"],
+[645,"Are miracles proof of divine mission?","log"],
+[646,"Was Moses meek or cruel?","text"],
+[647,"Did anybody ascend into heaven?","log"],
+[648,"Is scripture inspired?","log"]
+];
+
+// Tradução das categorias
+const CAT_DEFS = {
+  sci:  { label:"Absurdos Científicos & Históricos",      icon:"🔬", color:"#4a8c6f" },
+  moral:{ label:"Crueldade, Violência & Moral",           icon:"⚔️", color:"#c0522a" },
+  mis:  { label:"Misoginia & Discriminação contra Mulheres",icon:"⚡", color:"#7a5c8a" },
+  homo: { label:"Discriminação LGBTQ+",                   icon:"🏳️", color:"#5b8fa8" },
+  log:  { label:"Contradições Lógicas & Teológicas",      icon:"∴",  color:"#d4a017" },
+  text: { label:"Contradições Textuais & Narrativas",     icon:"📜", color:"#8b7355" },
+  num:  { label:"Inconsistências Numéricas & Genealógicas",icon:"🔢", color:"#4a5568" }
+};
+
+// Itens com análise detalhada em português
+const DETAIL = {
+  // SAB #11 - Dois relatos de criação
+  11:{pt:"Os dois relatos de criação",
+      v1:{ref:"Gênesis 1 (Fonte P, séc. VI a.C.)",text:"Deus cria por decreto: cosmos→plantas→animais→humanos (juntos, homem e mulher). Ordem: mundo→vida→humanidade."},
+      v2:{ref:"Gênesis 2 (Fonte J, séc. IX a.C.)",text:"Yahweh molda o homem do barro, depois planta o jardim, depois cria animais, por último a mulher da costela. Ordem radicalmente diferente."}},
+  // T3 - genealogia
+  2:{pt:"Abraão: justificado pela fé ou pelas obras?",
+     v1:{ref:"Romanos 4:2–3 (Paulo)",text:"Se Abraão foi justificado pelas obras, tem do que se gloriar... mas o que diz a Escritura? Abraão creu em Deus, e isso lhe foi imputado como justiça."},
+     v2:{ref:"Tiago 2:21–24",text:"Não foi Abraão, nosso pai, justificado pelas obras, quando ofereceu seu filho Isaque sobre o altar? Vós vedes que o homem é justificado pelas obras, e não somente pela fé."}},
+  15:{pt:"Como punir adúlteros?",
+      v1:{ref:"Levítico 20:10",text:"O homem que cometer adultério com a mulher de outro... o adúltero e a adúltera certamente serão mortos."},
+      v2:{ref:"João 8:3–7",text:"Os escribas e os fariseus trouxeram uma mulher apanhada em adultério... Jesus disse: Quem dentre vós está sem pecado seja o primeiro a lançar pedra contra ela."}},
+  50:{pt:"Quem tem a culpa pelo pecado original?",
+      v1:{ref:"Gênesis 3:6 + 1 Timóteo 2:14",text:"Eva comeu primeiro e deu ao seu marido... Adão não foi enganado; a mulher, porém, foi enganada e caiu em transgressão."},
+      v2:{ref:"Romanos 5:12–14",text:"Por um homem entrou o pecado no mundo... foi pelo pecado de um só que o pecado reinou. — Paulo coloca a culpa em Adão, não em Eva."}},
+  85:{pt:"É permitido fazer recenseamento?",
+      v1:{ref:"Números 1:1–3 — Deus ordena o censo",text:"O Senhor falou a Moisés no deserto do Sinai... Tomai o recenseamento de toda a congregação dos filhos de Israel."},
+      v2:{ref:"2 Samuel 24:1 + 1 Crônicas 21:1",text:"O Senhor incitou Davi a contar Israel e Judá — e matou 70.000 pessoas como punição por ele ter feito exatamente o que Deus antes ordenara."}},
+  98:{pt:"Deus é o autor da confusão?",
+      v1:{ref:"1 Coríntios 14:33",text:"Porque Deus não é Deus de confusão, senão de paz."},
+      v2:{ref:"Gênesis 11:7–9",text:"Confundamos ali a língua deles, para que não entendam a fala uns dos outros... O Senhor os dispersou dali. — Deus criou a confusão de línguas deliberadamente."}},
+  151:{pt:"Deus cria o mal?",
+       v1:{ref:"Isaías 45:7",text:"Que formo a luz e crio as trevas; que faço a paz e crio o mal; eu, o Senhor, que faço todas estas coisas."},
+       v2:{ref:"Habacuque 1:13",text:"Os teus olhos são puros demais para veres o mal; tu não podes contemplar a iniquidade. — Um Deus que não pode olhar o mal mas que o criou."}},
+  180:{pt:"Os humanos têm livre-arbítrio?",
+       v1:{ref:"Josué 24:15",text:"Escolhei hoje a quem servireis... quanto a mim e a minha casa, serviremos ao Senhor. — Escolha genuína possível."},
+       v2:{ref:"Romanos 9:15–16",text:"Terei misericórdia de quem eu tiver misericórdia... não depende do que quer, nem do que corre, mas de Deus que se compadece. — Salvo quem Deus decide, não quem escolhe."}},
+  187:{pt:"Deus mente?",
+       v1:{ref:"Números 23:19",text:"Deus não é homem para que minta, nem filho do homem para que se arrependa."},
+       v2:{ref:"1 Reis 22:22–23",text:"O Senhor disse: Tu vais persuadi-lo; vai e assim faze. E agora, eis que o Senhor pôs espírito mentiroso na boca de todos estes teus profetas. — Deus enviou espírito de mentira deliberadamente."}},
+  201:{pt:"Quem endureceu o coração do Faraó?",
+       v1:{ref:"Êxodo 8:15 — O Faraó endurece o próprio coração",text:"Mas quando Faraó viu que havia alívio, endureceu o seu coração e não os ouviu."},
+       v2:{ref:"Êxodo 9:12 — Deus endurece o coração do Faraó",text:"E o Senhor endureceu o coração de Faraó, e ele não os ouviu. — Deus removeu o livre-arbítrio do Faraó e depois o puniu por isso."}},
+  212:{pt:"Como devem ser tratados homossexuais?",
+       v1:{ref:"Levítico 20:13",text:"Se um homem se deitar com outro homem, como com mulher, ambos cometem abominação; certamente serão mortos."},
+       v2:{ref:"Romanos 13:10 / Mateus 22:39",text:"O amor não faz mal ao próximo. Amarás o teu próximo como a ti mesmo. — O mesmo cânon que ordena morte ordena amor ao próximo."}},
+  224:{pt:"Somos punidos pelos pecados dos outros?",
+       v1:{ref:"Êxodo 20:5",text:"Porque eu, o Senhor, teu Deus, sou Deus zeloso, que visito a iniquidade dos pais nos filhos até à terceira e quarta geração dos que me odeiam."},
+       v2:{ref:"Ezequiel 18:20",text:"A alma que pecar, essa morrerá; o filho não levará a iniquidade do pai, nem o pai levará a iniquidade do filho. — Contradição direta sobre punição coletiva."}},
+  270:{pt:"Matar: proibido ou ordenado?",
+       v1:{ref:"Êxodo 20:13",text:"Não matarás."},
+       v2:{ref:"1 Samuel 15:3",text:"Vai agora, e fere os amalequitas, e destrói por completo tudo o que eles têm; não os perdoarás; mas matarás tanto o homem como a mulher, o menino como o que mama, o boi como a ovelha, o camelo como o jumento."}},
+  325:{pt:"Deus é pacífico ou belicoso?",
+       v1:{ref:"Êxodo 15:3",text:"O Senhor é guerreiro; o Senhor é o seu nome."},
+       v2:{ref:"Romanos 15:33",text:"E o Deus de paz seja com todos vós. — Dois atributos fundamentalmente opostos no mesmo cânon."}},
+  332:{pt:"Mulheres podem liderar a Igreja?",
+       v1:{ref:"1 Coríntios 14:34–35",text:"As mulheres estejam caladas nas igrejas, porque não lhes é permitido falar... pois não lhes é permitido falar."},
+       v2:{ref:"Gálatas 3:28",text:"Não há judeu nem grego; não há escravo nem livre; não há homem nem mulher; porque todos vós sois um em Cristo Jesus."}},
+  354:{pt:"Deus se arrepende?",
+       v1:{ref:"Malaquias 3:6",text:"Porque eu, o Senhor, não mudo; por isso vós, ó filhos de Jacó, não sois consumidos."},
+       v2:{ref:"Gênesis 6:6–7",text:"E arrependeu-se o Senhor de ter criado o homem na terra, e isso foi motivo de tristeza para o seu coração. E disse o Senhor: Destruirei o homem que criei."}},
+  379:{pt:"Toda Escritura é inspirada por Deus?",
+       v1:{ref:"2 Timóteo 3:16",text:"Toda a Escritura é divinamente inspirada, e proveitosa para ensinar, para redarguir, para corrigir, para instruir em justiça."},
+       v2:{ref:"1 Coríntios 7:12",text:"Aos outros digo eu, não o Senhor... — Paulo distingue explicitamente o que é mandamento de Deus do que é sua própria opinião."}},
+  531:{pt:"Deus é o autor do mal?",
+       v1:{ref:"Isaías 45:7",text:"Que faço a paz e crio o mal; eu, o Senhor, que faço todas estas coisas."},
+       v2:{ref:"Habacuque 1:13 / Tiago 1:13",text:"Os teus olhos são puros demais para veres o mal. / Deus não pode ser tentado pelo mal nem tenta alguém. — O mesmo Deus cria o mal mas não pode olhá-lo."}},
+  548:{pt:"Escravidão e opressão são aceitáveis?",
+       v1:{ref:"Êxodo 21:2–6 / Levítico 25:44–46",text:"Se comprares um escravo hebreu, seis anos te servirá... Os vossos escravos... deles podeis herdar para os vossos filhos depois de vós; deles tomareis possessão."},
+       v2:{ref:"Gálatas 3:28 / Mateus 22:39",text:"Não há escravo nem livre... Amarás o teu próximo como a ti mesmo. — A mensagem central do NT contradiz a regulamentação da escravidão no AT."}}
+};
+
+// ── RENDERIZAÇÃO COMPLETA ──────────────────────────────────────────────────
+function buildViz() {
+  const root = document.getElementById("viz-root");
+  if (!root || root.dataset.built) return;
+  root.dataset.built = "1";
+
+  // Agrupar por categoria
+  const groups = {};
+  Object.keys(CAT_DEFS).forEach(k => groups[k] = []);
+  ALL_SAB.forEach(item => {
+    const cat = item[2] || "text";
+    if (groups[cat]) groups[cat].push(item);
+  });
+
+  // Totais
+  const total = ALL_SAB.length;
+  const el = document.getElementById("viz-total");
+  if (el) el.textContent = total;
+  const catEl = document.getElementById("viz-cat-count");
+  if (catEl) catEl.textContent = Object.keys(CAT_DEFS).length;
+
+  // Legenda
+  const legend = document.getElementById("viz-legend");
+  if (legend) legend.innerHTML = Object.entries(CAT_DEFS).map(([k,v]) =>
+    `<div class="viz-leg"><div class="viz-leg-dot" style="background:${v.color}"></div>${v.label} <span style="color:var(--gold);margin-left:4px">(${(groups[k]||[]).length})</span></div>`
+  ).join("");
+
+  // Renderizar categorias
+  root.innerHTML = Object.entries(CAT_DEFS).map(([catKey, catDef]) => {
+    const items = groups[catKey] || [];
+    if (!items.length) return "";
+
+    const bars = items.map((item,ii) => {
+      const n = item[0];
+      const hasDetail = !!DETAIL[n];
+      const w = hasDetail ? 22 : 6;
+      const opacity = hasDetail ? "1" : "0.5";
+      const h = hasDetail ? 88 : (22 + (n % 6) * 10);
+      return `<div class="viz-bar" data-cat="${catKey}" data-n="${n}" data-ii="${ii}"
+               style="height:${h}px;width:${w}px;flex-shrink:0;background:${catDef.color};opacity:${opacity}"
+               onclick="vizClick('${catKey}',${n},this)"
+               title="#${n}: ${item[1].replace(/'/g,"&#39;")}"></div>`;
+    }).join("");
+
+    const detailCount = items.filter(i=>!!DETAIL[i[0]]).length;
+    const hint = detailCount < items.length
+      ? `<div style="font-size:.72rem;color:var(--muted);margin-bottom:8px">${detailCount} barras largas com análise detalhada · ${items.length - detailCount} barras finas linkam para SAB · clique em qualquer uma</div>`
+      : "";
+
+    return `<div class="viz-category">
+      <div class="viz-cat-header">
+        <div class="viz-cat-icon">${catDef.icon}</div>
+        <div class="viz-cat-name">${catDef.label}</div>
+        <div class="viz-cat-count">${items.length} contradições</div>
+      </div>
+      ${hint}
+      <div style="overflow-x:auto;padding-bottom:6px">
+        <div class="viz-bars" style="height:100px;flex-wrap:nowrap;align-items:flex-end;gap:2px;width:max-content">${bars}</div>
+      </div>
+      <div id="vdetail-${catKey}" style="display:none;margin-top:14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:16px 18px"></div>
+    </div>`;
+  }).join("");
+}
+
+function vizClick(catKey, n, barEl) {
+  const detailEl = document.getElementById(`vdetail-${catKey}`);
+  if (!detailEl) return;
+
+  // Toggle se clicar na mesma barra
+  if (detailEl.dataset.active === String(n) && detailEl.style.display !== "none") {
+    detailEl.style.display = "none";
+    detailEl.dataset.active = "";
+    document.querySelectorAll(`[data-cat="${catKey}"]`).forEach(b => b.classList.remove("active"));
+    return;
+  }
+
+  document.querySelectorAll(`[data-cat="${catKey}"]`).forEach(b => b.classList.remove("active"));
+  barEl.classList.add("active");
+  detailEl.dataset.active = String(n);
+
+  const catColor = CAT_DEFS[catKey]?.color || "#888";
+  const item = ALL_SAB.find(i => i[0] === n);
+  const title_en = item ? item[1] : `#${n}`;
+  const detail = DETAIL[n];
+
+  if (detail) {
+    detailEl.innerHTML = `
+      <div class="viz-card-num" style="color:${catColor}">SAB #${n}</div>
+      <div class="viz-card-title">${detail.pt}</div>
+      <div class="viz-card-verse" style="border-color:${catColor}">
+        <div class="viz-card-vref" style="color:${catColor}">${detail.v1.ref}</div>
+        <div class="viz-card-vtext">${detail.v1.text}</div>
+      </div>
+      <div class="viz-card-verse" style="border-color:rgba(255,255,255,.15)">
+        <div class="viz-card-vref" style="color:var(--muted)">${detail.v2.ref}</div>
+        <div class="viz-card-vtext">${detail.v2.text}</div>
+      </div>`;
+  } else {
+    detailEl.innerHTML = `
+      <div class="viz-card-num" style="color:${catColor}">SAB #${n}</div>
+      <div class="viz-card-title" style="font-size:.95rem;color:var(--dim)">${title_en}</div>
+      <div style="margin-top:10px">
+        <a href="https://skepticsannotatedbible.com/contra/${n}.html" target="_blank"
+           style="font-size:.8rem;color:${catColor};text-decoration:none;border-bottom:1px dashed ${catColor}">
+          Ver análise completa em Skeptic's Annotated Bible →
+        </a>
+      </div>`;
+  }
+
+  detailEl.style.display = "block";
+  detailEl.scrollIntoView({behavior:"smooth", block:"nearest"});
+}
+
+// Inicializar quando a seção for aberta
+const _origShowSection = window.showSection;
+window.showSection = function(id) {
+  _origShowSection(id);
+  if (id === "visualizacao") setTimeout(buildViz, 80);
+};
+
+</script>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION X — AGENTE CIENTÍFICO
+═══════════════════════════════════════════════════════ -->
+<section id="ciencia" class="section">
+<div class="chapter-header">
+  <div class="chapter-label">Seção X — Análise Científica</div>
+  <h2 class="chapter-title" style="color:var(--green)">O Confronto Científico</h2>
+  <p class="chapter-intro">A ciência não foi criada para destruir a fé. Foi criada para descrever a realidade com precisão verificável. Quando essa descrição colide com afirmações bíblicas tomadas literalmente, não é a ciência que escolheu o confronto. Este capítulo não diz "a Bíblia é falsa". Pergunta: se um texto é de autoria divina e divindade implica onisciência, como explicar que ele descreve o cosmos de forma que todo estudante de física de ensino médio hoje pode refutar?</p>
+</div>
+
+<div class="agent-card">
+  <div class="agent-header">
+    <div class="agent-badge sci">🔬</div>
+    <div>
+      <div class="agent-name">Agente Científico</div>
+      <div class="agent-desc">Física · Astronomia · Biologia · Geologia · Cosmologia</div>
+    </div>
+  </div>
+  <div class="agent-body">
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">1</div>
+    <div>
+      <div class="sci-title">As plantas antes do sol — o impossível fotossintético</div>
+      <span class="sci-tag tag-astro">Astronomia</span><span class="sci-tag tag-bio">Biologia</span>
+    </div>
+  </div>
+  <div class="sci-block">
+    <div class="sci-ref">Gênesis 1:11–13 — Dia 3</div>
+    <div class="sci-text">"E disse Deus: Produza a terra relva, ervas que deem semente, e árvores frutíferas que deem fruto segundo a sua espécie... E assim foi. E viu Deus que era bom. E foi a tarde e a manhã, o dia terceiro."</div>
+  </div>
+  <div class="sci-vs">↓ um dia depois ↓</div>
+  <div class="sci-block">
+    <div class="sci-ref">Gênesis 1:14–19 — Dia 4</div>
+    <div class="sci-text">"E disse Deus: Haja luminares na expansão dos céus, para separar o dia da noite... E fez Deus os dois grandes luminares: o luminar maior para governar o dia, e o luminar menor para governar a noite... E viu Deus que era bom. E foi a tarde e a manhã, o dia quarto."</div>
+  </div>
+  <div class="sci-analysis">A fotossíntese — o processo pelo qual plantas convertem luz solar em energia — é a base de toda vida vegetal. Sem luz solar, as células vegetais não produzem glicose. Sem glicose, morrem entre horas e dias dependendo das reservas. O texto coloca "ervas", "relva" e "árvores frutíferas" (organismos com fotossíntese obrigatória) inteiros no Dia 3 e o sol no Dia 4.</div>
+  <div class="sci-analysis">A apologia mais comum diz: "um dia pode significar era geológica, não 24 horas." O argumento funciona parcialmente para outros pontos — mas aqui piora: se cada "dia" dura bilhões de anos, as plantas existiram <em>um bilhão de anos sem fotossíntese</em>, não apenas 24 horas. A solução torna o problema exponencialmente maior.</div>
+  <div class="sci-analysis">A segunda apologia diz: "Deus era a luz nos primeiros três dias." O texto de Gênesis 1:3 cria luz ("haja luz") no Dia 1 — mas luz é radiação eletromagnética. Fotossíntese requer fótons em comprimentos de onda específicos (430–680 nm). "Luz divina" não tem comprimento de onda verificável e não interagiria com clorofila da mesma forma que luz solar. É uma solução que exige que o processo físico da fotossíntese funcione de modo não-físico.</div>
+  <div class="sci-conclusion">No sistema solar, o sol existe há ~4,6 bilhões de anos. A Terra tem ~4,54 bilhões de anos. As primeiras plantas vasculares apareceram há ~430 milhões de anos — <em>muito depois</em> do sol. A sequência científica é exatamente o inverso da bíblica: sol → Terra → vida unicelular → plantas. A sequência bíblica coloca primeiro o que surgiu por último.</div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">2</div>
+    <div>
+      <div class="sci-title">A luz antes das fontes de luz — o problema físico do Dia 1</div>
+      <span class="sci-tag tag-astro">Astronomia</span>
+    </div>
+  </div>
+  <div class="sci-block">
+    <div class="sci-ref">Gênesis 1:3 — Dia 1</div>
+    <div class="sci-text">"E disse Deus: Haja luz. E houve luz. E viu Deus que a luz era boa; e fez separação entre a luz e as trevas."</div>
+  </div>
+  <div class="sci-vs">↓ três dias depois ↓</div>
+  <div class="sci-block">
+    <div class="sci-ref">Gênesis 1:14–16 — Dia 4</div>
+    <div class="sci-text">"E disse Deus: Haja luminares na expansão dos céus para separar o dia da noite... E fez Deus os dois grandes luminares..."</div>
+  </div>
+  <div class="sci-analysis">Luz é radiação eletromagnética. No universo físico, toda radiação eletromagnética tem uma fonte — seja uma estrela, uma reação nuclear, um processo quântico. "Luz" sem fonte de luz é fisicamente incoerente. O universo primitivo imediatamente após o Big Bang estava cheio de radiação — mas essa radiação era produto de processos físicos (plasma de quarks e glúons, reações nucleares). Não era luz "criada por decreto" prévia a qualquer processo físico.</div>
+  <div class="sci-conclusion">A cosmologia moderna descreve a origem da luz visível no universo com precisão: 380.000 anos após o Big Bang, o universo esfriou o suficiente para que elétrons se combinassem com núcleos, tornando o cosmos transparente à radiação — a "radiação cósmica de fundo" que ainda hoje pode ser medida com precisão. Não há lugar em nenhum modelo físico verificável para luz sem fonte de luz.</div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">3</div>
+    <div>
+      <div class="sci-title">A cosmologia bíblica vs o Big Bang — a ordem do universo</div>
+      <span class="sci-tag tag-astro">Astronomia</span>
+    </div>
+  </div>
+  <div class="sci-block">
+    <div class="sci-ref">Sequência de Gênesis 1</div>
+    <div class="sci-text">Dia 1: Céu, terra, luz. / Dia 2: firmamento ("expansão"). / Dia 3: mar, terra seca, vegetação. / Dia 4: sol, lua, estrelas. / Dia 5: animais aquáticos e aves. / Dia 6: animais terrestres, humanidade.</div>
+  </div>
+  <div class="sci-vs">vs</div>
+  <div class="sci-block">
+    <div class="sci-ref">Sequência cosmológica verificável</div>
+    <div class="sci-text">13,8 bilhões a.a.: Big Bang — espaço, tempo, energia. / 380.000 anos: primeiros átomos, luz visível. / ~200 milhões de anos: primeiras estrelas. / ~9 bilhões de anos: formação do sol. / ~4,54 bilhões de anos: formação da Terra. / ~3,8 bilhões de anos: vida unicelular. / ~500 milhões de anos: vida multicelular. / ~430 milhões de anos: plantas. / ~65 milhões de anos: mamíferos pós-extinção. / ~2-3 milhões de anos: primeiros hominídeos.</div>
+  </div>
+  <div class="sci-analysis">A Terra no Dia 1 antes das estrelas (Dia 4) é incompatível com a astrofísica: a Terra é feita de elementos pesados (ferro, silício, oxigênio) que só existem porque estrelas anteriores viveram e morreram, espalhando esses elementos pelo cosmos em supernovas. A Terra literalmente é feita de poeira estelar — não pode existir antes das estrelas que produziram seus materiais constituintes.</div>
+  <div class="sci-conclusion">O Salmo 19 canta: "Os céus narram a glória de Deus." Se narram, o que dizem? Que o universo tem 13,8 bilhões de anos. Que a Terra tem 4,54 bilhões. Que a vida evoluiu ao longo de bilhões de anos. O próprio cosmos, se é revelação, contradiz a sequência de Gênesis 1. A questão não é "Deus existe?" — é "este texto específico, tomado literalmente, descreve o cosmos como ele realmente é?"</div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">4</div>
+    <div>
+      <div class="sci-title">O Dilúvio Universal — as impossibilidades físicas</div>
+      <span class="sci-tag tag-geo">Geologia</span><span class="sci-tag tag-bio">Biologia</span>
+    </div>
+  </div>
+  <div class="sci-block">
+    <div class="sci-ref">Gênesis 7:19–20 — A extensão do dilúvio</div>
+    <div class="sci-text">"E as águas prevaleceram muito sobre a terra; e cobriram-se todos os altos montes que havia debaixo de todos os céus. Quinze côvados acima cresceram as águas; e cobriram-se os montes."</div>
+  </div>
+  <div class="sci-analysis"><strong>Problema 1 — Volume de água:</strong> Cobrir o Monte Everest (8.849 m) exigiria elevar o nível do mar em ~8,5 km. O volume de água atual na Terra (oceanos + gelo + água doce = ~1,386 bilhões de km³) é insuficiente: cobrir toda a superfície terrestre até 8.849 m exigiria ~4,5 bilhões de km³ — mais de três vezes toda a água existente no planeta. De onde viria e para onde iria?</div>
+  <div class="sci-analysis"><strong>Problema 2 — A pressão atmosférica:</strong> A 8,8 km de altitude, a pressão atmosférica é ~30% da pressão ao nível do mar. O ar ficaria irrespirável sem pressurização. Noé e os animais no topo das águas estariam em altitude de alta montanha.</div>
+  <div class="sci-analysis"><strong>Problema 3 — Os animais:</strong> Estimativas conservadoras calculam 8,7 milhões de espécies eucarióticas. Dois de cada = 17,4 milhões de animais. A Arca tem dimensões descritas: 300 cúbitos × 50 × 30 (Gênesis 6:15) = ~130 metros × 22 × 13 m. O volume (~37.000 m³) não acomoda 17,4 milhões de animais com comida, água e espaço para sobreviver um ano. E os animais da Austrália, das Américas, da Antártida — como chegaram e voltaram sem rastro genético de viagem?</div>
+  <div class="sci-analysis"><strong>Problema 4 — O rastro geológico:</strong> Um dilúvio global deixaria uma camada de sedimentos uniforme em toda a Terra, identificável e datável em todo registro geológico. Não existe. Ao contrário: geólogos encontram estratos contínuos de sedimentação que cobrem os 4500 anos do suposto dilúvio sem nenhuma interrupção por inundação global.</div>
+  <div class="sci-analysis"><strong>Problema 5 — A continuidade civilizatória:</strong> O Egito tinha faraós reinando e pirâmides sendo construídas exatamente durante o período bíblico do Dilúvio (~2350 a.C. na cronologia tradicional). Registros administrativos egípcios são contínuos. Não há ruptura, extinção ou reconstrução. A China da Dinastia Xia (~2100 a.C.) também tem continuidade arqueológica. Nenhuma dessas civilizações foi extinta.</div>
+  <div class="sci-conclusion">O dilúvio como evento local em Mesopotâmia (~3000 a.C., quando cheias catastróficas eram frequentes) é arqueologicamente plausível e explicaria a origem do mito. Como evento global que matou toda a vida exceto uma família e representantes de cada espécie: fisicamente impossível com as leis da física que observamos.</div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">5</div>
+    <div>
+      <div class="sci-title">A Evolução — o que a biologia diz sobre Gênesis 1-2</div>
+      <span class="sci-tag tag-bio">Biologia</span>
+    </div>
+  </div>
+  <div class="sci-analysis">A teoria da evolução por seleção natural (Darwin, 1859) foi testada por 165 anos em cinco campos independentes: paleontologia (registro fóssil), genética molecular, biogeografia, anatomia comparada e observação direta de especiação. Em nenhum desses campos uma única evidência falsificou a teoria. Em todos eles, as evidências convergem para a mesma conclusão: espécies compartilham ancestrais comuns e se diversificam por variação hereditária e seleção.</div>
+  <div class="sci-block">
+    <div class="sci-ref">Evidências genéticas diretas</div>
+    <div class="sci-text">O DNA humano é 98,7% idêntico ao do chimpanzé. Compartilhamos ~85% com camundongos, ~60% com moscas-da-fruta, ~31% com levedura. O genoma humano contém ~8% de sequências retrovirais — fragmentos de vírus que infectaram ancestrais e foram incorporados ao DNA. Esses vírus retrovirais aparecem nos mesmos loci cromossômicos em humanos e chimpanzés, indicando que foram inseridos num ancestral comum antes da divergência das espécies.</div>
+  </div>
+  <div class="sci-block">
+    <div class="sci-ref">O cromossomo 2 humano — evidência direta de ancestralidade comum</div>
+    <div class="sci-text">Humanos têm 23 pares de cromossomos; outros grandes primatas têm 24. A diferença era um problema para a teoria evolutiva — até que o Cromossomo 2 humano foi examinado e revelou-se como a fusão de dois cromossomos ancestrais. A evidência: sequências teloméricas (que normalmente só aparecem nas extremidades dos cromossomos) estão no meio do Cromossomo 2, no ponto de fusão. Dois cromossomos de ancestral comum foram fundidos numa única geração.</div>
+  </div>
+  <div class="sci-analysis">A objeção teológica mais frequente: "evolução e criação são compatíveis — Deus usou a evolução como ferramenta." Esta posição (Evolução Teísta) é respeitável e adotada pelo Vaticano desde 1950 (Humani Generis). Mas exige reconhecer que Gênesis 1-2 não é ciência literal — é teologia narrativa. E se é teologia narrativa, a pergunta sobre o que mais no texto é narrativa teológica (não história factual) se torna necessária.</div>
+  <div class="sci-conclusion">A questão não é ateísmo vs. teísmo. É literalismo vs. leitura contextual. Muitos teólogos cristãos sérios — Karl Barth, N.T. Wright, Francis Collins (diretor do Projeto Genoma Humano e cristão evangélico) — aceitam a evolução e a cosmologia moderna como descritores precisos do universo físico, e lêem Gênesis como documento teológico sobre a relação Deus-humanidade, não manual de cosmogonia.</div>
+</div>
+
+  </div><!-- .agent-body -->
+</div><!-- .agent-card -->
+
+<div class="big-quote">"O livro da natureza está escrito em linguagem matemática, e seus caracteres são triângulos, círculos e outras figuras geométricas." — Galileu Galilei<br><span style="font-size:.8rem;color:var(--muted);font-style:normal;letter-spacing:.1em">O homem que foi condenado pela Igreja por dizer que a Terra se movia ao redor do Sol. Em 1992, o Vaticano reconheceu formalmente o erro. A Terra continuou se movendo.</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION XI — ARQUEOLOGIA BÍBLICA
+═══════════════════════════════════════════════════════ -->
+<section id="arqueologia" class="section">
+<div class="chapter-header">
+  <div class="chapter-label">Seção XI — Evidência Material</div>
+  <h2 class="chapter-title" style="color:#c39bd3">Arqueologia Bíblica</h2>
+  <p class="chapter-intro">A arqueologia não foi criada para refutar a Bíblia. Os primeiros grandes escavadores bíblicos — Heinrich Schliemann, William Flinders Petrie, William Foxwell Albright — eram frequentemente motivados pelo desejo de confirmar os textos sagrados. O que encontraram foi mais complexo e mais interessante do que confirmação ou refutação. Algumas narrativas bíblicas se apoiam em realidade histórica verificável. Outras não têm rastro material onde deveriam ter.</p>
+</div>
+
+<div class="agent-card">
+  <div class="agent-header">
+    <div class="agent-badge" style="background:rgba(195,155,211,.15);border:1px solid rgba(195,155,211,.35)">🏛️</div>
+    <div>
+      <div class="agent-name">Agente Histórico-Arqueológico</div>
+      <div class="agent-desc">Escavação · Epigrafia · Fontes extrabíblicas · Estratigrafia</div>
+    </div>
+  </div>
+  <div class="agent-body">
+
+<div class="arq-item">
+  <div class="c-header"><div class="c-number" style="color:rgba(195,155,211,.3)">1</div><div><div class="c-title">O Êxodo — dois milhões de pessoas que não deixaram rastro</div><span class="sci-tag tag-arq">Arqueologia</span><span class="sci-tag tag-hist">Histórico</span></div></div>
+  <div class="arq-finding">
+    <div class="arq-ref">O que a Bíblia afirma</div>
+    <div class="arq-text">Êxodo 12:37: "Partiram os filhos de Israel de Ramessés para Sucote; eram cerca de seiscentos mil homens a pé, afora as crianças." — com famílias: estimativas de 2 a 3 milhões de pessoas vagando pelo Sinai por 40 anos.</div>
+  </div>
+  <div class="arq-finding">
+    <div class="arq-ref">O que a arqueologia encontrou no Sinai</div>
+    <div class="arq-text">Israel Finkelstein (Universidade de Tel Aviv) e Neil Asher Silberman documentaram extensivamente em "A Bíblia Desenterrada" (2001): décadas de escavações sistemáticas no Sinai por equipes israelenses e egípcias não encontraram nenhum rastro de acampamento de 2 milhões de pessoas — nenhum lar, nenhum forno, nenhum cemitério, nenhuma cerâmica em quantidade. Em Kadesh-Barnea, onde a Bíblia coloca Israel por 38 anos, os estratos do período relevante são quase ausentes.</div>
+  </div>
+  <div class="arq-finding">
+    <div class="arq-ref">Registros egípcios — a maior lacuna</div>
+    <div class="arq-text">O Egito era burocrático obsessivo. Registrava censos, impostos, safras, guerras perdidas (o que era raro, pois faraós não costumavam registrar derrotas). Não há menção nas fontes egípcias a escravidão em massa de hebreus, às dez pragas (que teriam destruído a economia egípcia), ao afogamento do exército no Mar Vermelho, nem à saída de uma população escrava massiva. Para um evento que teria desestruturado o maior império do mundo antigo, o silêncio egípcio é ensurdecedor.</div>
+  </div>
+  <div class="arq-verdict">A posição acadêmica consensual (incluindo a de arqueólogos israelenses): o Êxodo como descrito — 2 milhões de pessoas, 40 anos no Sinai — não tem apoio arqueológico. Uma migração menor, de um grupo tribal que depois se tornou o núcleo da identidade israelita, é possível. O evento foi amplificado ao longo de séculos de tradição oral e escrita para se tornar narrativa fundacional da nação. Isso não é ateísmo — é o que os escavadores encontraram.</div>
+</div>
+
+<div class="arq-item">
+  <div class="c-header"><div class="c-number" style="color:rgba(195,155,211,.3)">2</div><div><div class="c-title">Jericó — os muros que não caíram na época certa</div><span class="sci-tag tag-arq">Arqueologia</span></div></div>
+  <div class="arq-finding">
+    <div class="arq-ref">Josué 6:20 — A queda dos muros</div>
+    <div class="arq-text">"E o povo jubilou, e tocaram as trombetas; e sucedeu que, ouvindo o povo o sonido da trombeta, jubilou o povo com grande jubileu; e caiu o muro por terra."</div>
+  </div>
+  <div class="arq-finding">
+    <div class="arq-ref">Kathleen Kenyon — Tell es-Sultan, 1952-1958</div>
+    <div class="arq-text">Dame Kathleen Kenyon, a mais importante arqueóloga bíblica do século XX, escavou Jericó meticulosamente e descobriu: houve realmente uma cidade com muros que foram destruídos — mas em ~1550 a.C. (período Médio-Bronze). A conquista de Josué é datada consensualmente em ~1200 a.C. (Ferro I). No período relevante para Josué, Jericó era provavelmente desabitada ou ocupada por um assentamento mínimo sem muros significativos. Não há o que tivesse caído.</div>
+  </div>
+  <div class="arq-verdict">Jericó é o caso arqueológico mais estudado da historiografia bíblica. A conclusão de Kenyon, confirmada por Piotr Bienkowski (1990) e outras equipes: o evento descrito em Josué 6 não corresponde às evidências materiais do período. Isso não elimina a possibilidade de que um conflito menor ocorreu — mas a narrativa dramática dos muros caindo ao som de trombetas depois de sete voltas não tem base material no período correto.</div>
+</div>
+
+<div class="arq-item">
+  <div class="c-header"><div class="c-number" style="color:rgba(195,155,211,.3)">3</div><div><div class="c-title">O Rei Davi — entre mito e história</div><span class="sci-tag tag-arq">Arqueologia</span><span class="sci-tag tag-hist">Histórico</span></div></div>
+  <div class="arq-finding">
+    <div class="arq-ref">A Inscrição de Tel Dan (1993) — primeira confirmação extrabíblica de Davi</div>
+    <div class="arq-text">Em 1993, arqueólogos descobriram em Tel Dan (norte de Israel) um fragmento de estela aramaica do séc. IX a.C. contendo a expressão "bet David" — Casa de Davi. É a primeira e única menção extrabíblica direta a Davi. Confirma que a dinastia davídica existiu como entidade política reconhecida por vizinhos.</div>
+  </div>
+  <div class="arq-finding">
+    <div class="arq-ref">O problema da escala — Jerusalém no tempo de Davi</div>
+    <div class="arq-text">A Bíblia descreve o reino de Davi como um império que ia do Eufrates ao Egito, com uma capital monumental em Jerusalém. As escavações de Eilat Mazar e outras equipes em Ofel (a Cidade de Davi original) revelam: Jerusalém no séc. X a.C. tinha 4-6 hectares e população de talvez 2.000 pessoas. É uma aldeia de montanha, não uma capital imperial. O palácio de Davi, se existiu, não foi monumental na escala bíblica.</div>
+  </div>
+  <div class="arq-verdict">Consenso atual (Finkelstein, Mazar, Faust, entre outros): Davi provavelmente foi um líder tribal real no séc. X a.C., fundador de uma dinastia em Judá. A narrativa imperial foi amplificada em séculos posteriores — especialmente durante as reformas do rei Josias (~620 a.C.), quando a historiografia deuteronomista criou o passado glorioso que justificava as pretensões de Josias ao território do norte.</div>
+</div>
+
+<div class="arq-item">
+  <div class="c-header"><div class="c-number" style="color:rgba(195,155,211,.3)">4</div><div><div class="c-title">O que a arqueologia confirma — honestidade intelectual exige isso</div><span class="sci-tag tag-arq">Arqueologia</span></div></div>
+  <div class="arq-finding">
+    <div class="arq-ref">Confirmações históricas verificáveis</div>
+    <div class="arq-text">
+      <strong>Crônicas Babilônicas:</strong> A deportação de Jeconias (597 a.C.) e o saque de Jerusalém são confirmados por tabletes cuneiformes babilônicos encontrados no Museu Britânico.<br><br>
+      <strong>O rei Acabe:</strong> O rei de Israel Acabe é mencionado nas Anais de Salmanesar III (853 a.C.) como líder da coalizão que o enfrentou em Carcar. Primeira confirmação extrabíblica de um rei israelita.<br><br>
+      <strong>O Túnel de Ezequias:</strong> O túnel escavado sob Jerusalém para desviar a fonte Giom durante o cerco assírio (2 Reis 20:20) foi encontrado e corresponde à descrição bíblica. A Inscrição de Siloé, dentro do túnel, descreve sua construção.<br><br>
+      <strong>A destruição de Laquis:</strong> A narrativa do cerco de Laquis por Senaqueribe (~701 a.C.) é confirmada tanto pelo relevo de Laquis no Museu Britânico quanto pelas escavações do local, que revelam camada de destruição datável.
+    </div>
+  </div>
+  <div class="arq-verdict">A Bíblia não é toda história nem toda ficção. É um arquivo complexo de documentos produzidos ao longo de ~1000 anos, alguns com base histórica verificável, outros com narrativas que amplificam, constroem ou criam. A arqueologia não é inimiga da Bíblia — é a ferramenta que ajuda a distinguir o que é cada coisa. E essa distinção, para quem valoriza a verdade, deveria ser bem-vinda.</div>
+</div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION XII — RELIGIÕES COMPARADAS
+═══════════════════════════════════════════════════════ -->
+<section id="religioes" class="section">
+<div class="chapter-header">
+  <div class="chapter-label">Seção XII — Perspectiva Comparativa</div>
+  <h2 class="chapter-title" style="color:var(--blue)">Religiões Comparadas</h2>
+  <p class="chapter-intro">Se uma revelação é única, exclusiva e de origem sobrenatural, como explicar que seus elementos centrais aparecem em culturas que não tiveram contato entre si, séculos antes? Isso não prova que a revelação é falsa — prova que responde a questões universalmente humanas. A comparação não diminui o específico: ajuda a entender o que é estruturalmente humano e o que poderia ser singularmente revelado.</p>
+</div>
+
+<div class="manifesto" style="border-color:rgba(91,143,168,.2)">
+  <p>O objetivo desta seção não é dizer que Jesus é "apenas mais um" na lista de deuses que morrem e ressuscitam. É mais preciso do que isso: se padrões narrativos idênticos aparecem em culturas independentes, a questão que se abre é — o que isso significa para a singularidade da revelação cristã? Teólogos sérios não ignoram isso: C.S. Lewis chamou esses mitos de "good dreams" — pré-figurações que a encarnação histórica tornou real. Joseph Campbell os chamou de "monomito". A pergunta permanece aberta.</p>
+</div>
+
+<div style="margin-bottom:50px">
+  <div class="analysis-label">O deus que morre e ressuscita — padrão recorrente na história das religiões</div>
+
+  <div class="rel-grid">
+    <div class="rel-card">
+      <div class="rel-card-init">O</div>
+      <div class="rel-card-name">Osíris (Egito, ~2400 a.C.)</div>
+      <div class="rel-card-text">Assassinado por Set, seu irmão. Ressuscitado por Ísis. Governa o reino dos mortos. Julgador das almas. Símbolo da vida após a morte. Culto: 2.400 anos antes de Cristo.</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-card-init">D</div>
+      <div class="rel-card-name">Dionísio (Grécia, ~600 a.C.)</div>
+      <div class="rel-card-text">Filho de Zeus e uma mortal (Sêmele). Desmembrado pelos Titãs, ressuscitado por Zeus. Deus do vinho, da transformação, da morte e renascimento. Mistérios de Elêusis prometiam vida após a morte.</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-card-init">T</div>
+      <div class="rel-card-name">Tamuz/Adônis (Mesopotâmia, ~2000 a.C.)</div>
+      <div class="rel-card-text">Deus da vegetação que morre no outono e ressuscita na primavera. Mulheres choravam sua morte anualmente. Ezequiel 8:14 menciona mulheres chorando Tamuz no Templo de Jerusalém — como prática proibida mas existente.</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-card-init">M</div>
+      <div class="rel-card-name">Mitra (Pérsia/Roma, séc. I-IV d.C.)</div>
+      <div class="rel-card-text">Culto mistérico muito popular entre soldados romanos. Ritual de refeição comunitária, batismo, salvação após morte. Competiu diretamente com o cristianismo no séc. III. Pontos de sobreposição rituais são notáveis, embora origens mitológicas sejam distintas.</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-card-init">B</div>
+      <div class="rel-card-name">Buda (Índia, ~500 a.C.)</div>
+      <div class="rel-card-text">Nascimento sobrenatural (sonho da mãe com elefante branco). Tentação por Mara (figura demoníaca) antes da iluminação. Morte voluntária. Tradições posteriores incluem ressurreição e ascensão ao Nirvana. Paralelos estruturais, não identidade de conteúdo.</div>
+    </div>
+    <div class="rel-card">
+      <div class="rel-card-init">K</div>
+      <div class="rel-card-name">Krishna (Índia, ~400 a.C.)</div>
+      <div class="rel-card-text">Nascimento virginal (em algumas tradições). Tentativas de matar o bebê divino (Kamsa, o rei). Vida de ensinamentos morais. Morte e ascensão. O Bhagavad Gita: diálogo divino com humanidade sobre dever e salvação. Anterior aos evangelhos.</div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-bottom:50px">
+  <div class="analysis-label">O dilúvio — em 12 culturas independentes</div>
+  <div class="historical-context">O dilúvio aparece em mais de 200 tradições culturais independentes ao redor do mundo. Isso não prova que o dilúvio bíblico é fictício — prova que dilúvios catastróficos aconteceram e foram narrados. A questão relevante é: quando o Épico de Gilgamesh (~1800 a.C.) tem Utnapishtim construindo uma barca, colocando animais, soltando pássaros e oferecendo sacrifício após a água baixar — com estrutura narrativa quase idêntica a Noé —, e foi escrito mil anos antes da narrativa bíblica, o que isso nos diz sobre as fontes de Gênesis 6-8?</div>
+  <div class="rel-parallel">
+    <div class="rel-col">
+      <div class="rel-label a">Épico de Gilgamesh — Tabuleta XI (~1800 a.C.)</div>
+      Utnapishtim recebe aviso divino da inundação. Constrói um barco cúbico. Embarca família e animais. A chuva dura 6 dias e 6 noites. O barco pousa no Monte Nimush. Solta uma pomba — retorna. Solta uma andorinha — retorna. Solta um corvo — não retorna. Oferece sacrifício. Os deuses "voaram como moscas" para o aroma.
+    </div>
+    <div class="rel-vs-col">vs</div>
+    <div class="rel-col">
+      <div class="rel-label b">Gênesis 6-8 (~550 a.C. na forma textual)</div>
+      Noé recebe aviso divino da inundação. Constrói uma arca retangular. Embarca família e animais (2 de cada). A chuva dura 40 dias. A arca pousa no Monte Ararat. Solta um corvo — não retorna. Solta uma pomba — retorna. Solta a pomba novamente — não retorna. Oferece holocausto. Yahweh "farejou o suave aroma."
+    </div>
+  </div>
+  <div class="feuerbach-reading" style="margin-top:18px">A similaridade não é coincidência nem plágio direto — é herança cultural. Israel viveu em contato com a Mesopotâmia, foi deportado para a Babilônia onde o Épico de Gilgamesh era a literatura nacional. O que os editores sacerdotais fizeram foi pegar um mito universal, reinterpretá-lo teologicamente substituindo os deuses caprichosos por Yahweh ético, e transformá-lo em veículo de uma mensagem teológica sobre obediência e aliança. O enredo é compartilhado. A teologia é israelita.</div>
+</div>
+
+<div style="margin-bottom:50px">
+  <div class="analysis-label">A Regra de Ouro — ética universal anterior ao Novo Testamento</div>
+  <div class="historical-context">Jesus formulou: "Tudo o que quereis que os homens vos façam, fazei-o também a eles" (Mateus 7:12). É um princípio moral profundo. Mas é exclusivo do cristianismo? O que encontramos quando verificamos as outras grandes tradições:</div>
+  <div rel-grid style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0">
+    <div class="arq-finding">
+      <div class="arq-ref">Confúcio (~500 a.C.) — 500 anos antes de Jesus</div>
+      <div class="arq-text">"O que você não deseja para si mesmo, não o imponha aos outros." (Analectos, XV:24)</div>
+    </div>
+    <div class="arq-finding">
+      <div class="arq-ref">Buda (~500 a.C.) — 500 anos antes de Jesus</div>
+      <div class="arq-text">"Não fira os outros com o que lhe causa dor." (Udanavarga, 5:18)</div>
+    </div>
+    <div class="arq-finding">
+      <div class="arq-ref">Hilel (~30 a.C.) — contemporâneo de Jesus, rabino judaico</div>
+      <div class="arq-text">"O que é odioso para ti, não faças ao teu próximo. Isso é toda a Torá; o resto é comentário." (Talmude Babilônico, Shabbat 31a)</div>
+    </div>
+    <div class="arq-finding">
+      <div class="arq-ref">Mahabharata Hindu (~300 a.C.)</div>
+      <div class="arq-text">"Nunca faças a outro o que julgarias danoso para ti mesmo." (Anusasana Parva, 113:8)</div>
+    </div>
+    <div class="arq-finding">
+      <div class="arq-ref">Isócrates (Grécia, ~375 a.C.)</div>
+      <div class="arq-text">"Não faças aos outros o que te irrita quando feito por outros." (Nicocles, 61)</div>
+    </div>
+    <div class="arq-finding">
+      <div class="arq-ref">Confissão Negativa Egípcia (~1250 a.C.)</div>
+      <div class="arq-text">"Não causei sofrimento. Não fiz chorarem. Não matei." — como condição para o julgamento favorável de Osíris.</div>
+    </div>
+  </div>
+  <div class="feuerbach-reading" style="margin-top:14px">A Regra de Ouro é a humanidade descobrindo, independentemente, o princípio básico da convivência social. Toda sociedade complexa que sobreviveu o suficiente para deixar registros chegou à mesma conclusão por caminhos independentes. O que isso significa: ou Deus revelou o mesmo princípio a todas as culturas (Teologia Natural), ou a consciência ética humana descobre esse princípio naturalmente quando tem estrutura social suficiente (Feuerbach). A Regra de Ouro não é argumento contra o cristianismo — é argumento contra a reivindicação de exclusividade moral.</div>
+</div>
+
+<div style="margin-bottom:50px">
+  <div class="analysis-label">A evolução do monoteísmo — não foi sempre assim</div>
+  <div class="historical-context">O próprio texto bíblico preserva rastros de um passado politeísta que o monoteísmo posterior tentou apagar mas não conseguiu completamente:</div>
+  <div class="logic-box">
+    <div class="logic-box-title">Evidências de politeísmo residual no texto bíblico</div>
+    <div class="logic-item"><span class="logic-arrow">→</span><span><strong>Êxodo 20:3:</strong> "Não terás outros deuses diante de mim." — A proibição pressupõe que outros deuses existem. Um monoteísta absoluto diria "não há outros deuses", não "não os adore."</span></div>
+    <div class="logic-item"><span class="logic-arrow">→</span><span><strong>Gênesis 1:26:</strong> "Façamos o homem à nossa imagem." — Plural deliberado num contexto supostamente monoteísta. O contexto ugarítico revela o que era: assembleia divina de El com outros deuses.</span></div>
+    <div class="logic-item"><span class="logic-arrow">→</span><span><strong>Salmo 82:1:</strong> "Deus está na assembleia de El [ou 'dos deuses']; julga no meio dos deuses." — Yahweh preside uma assembleia de seres divinos.</span></div>
+    <div class="logic-item"><span class="logic-arrow">→</span><span><strong>Deuteronômio 32:8-9:</strong> (versão LXX): "Quando o Altíssimo distribuiu as nações... estabeleceu os limites dos povos segundo o número dos filhos de Deus. Mas a porção de Yahweh é o seu povo." — Yahweh como uma divindade nacional entre outras, subordinado a "El Altíssimo."</span></div>
+    <div class="logic-item"><span class="logic-arrow">→</span><span><strong>1 Reis 11:33:</strong> Salomão adorou Astarote (deusa fenícia), Quemós (deus de Moabe) e Milcom (deus amonita). O problema não é que Salomão apostou — é que o texto apresenta esses deuses como realmente existindo e tendo poder suficiente para merecer adoração.</span></div>
+  </div>
+  <div class="feuerbach-reading">Israel foi progressivamente monoteísta, não originalmente monoteísta. O processo levou séculos — de politeísmo tribal (múltiplos deuses, Yahweh entre eles) a henotheísmo (Yahweh como deus de Israel acima dos outros) a monoteísmo ético (Isaías: "Eu sou o Senhor, e não há outro"). O Segundo Isaías (~550 a.C., escrito no exílio babilônico) é o primeiro texto bíblico com monoteísmo absoluto explícito. Não é a origem — é o destino de um longo processo humano de compreensão religiosa.</div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION XIII — FILOSOFIA DA RELIGIÃO
+═══════════════════════════════════════════════════════ -->
+<section id="fil-religiao" class="section">
+<div class="chapter-header">
+  <div class="chapter-label">Seção XIII — Fundamentos Filosóficos</div>
+  <h2 class="chapter-title" style="color:var(--blue)">Filosofia da Religião</h2>
+  <p class="chapter-intro">A filosofia da religião não é ateísmo acadêmico. É o exame rigoroso das afirmações religiosas usando as ferramentas da lógica, epistemologia e metafísica. Seus praticantes incluem crentes profundos (Alvin Plantinga, Richard Swinburne) e céticos (J.L. Mackie, Paul Draper). O objetivo não é destruir — é precisar: o que exatamente está sendo afirmado? A afirmação é coerente? Que evidências a apoiariam ou a refutariam?</p>
+</div>
+
+<div class="agent-card">
+  <div class="agent-header">
+    <div class="agent-badge eth">φ</div>
+    <div>
+      <div class="agent-name">Agente Filosófico</div>
+      <div class="agent-desc">Epistemologia · Metafísica · Lógica Modal · Ética · Teodiceia</div>
+    </div>
+  </div>
+  <div class="agent-body">
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">1</div>
+    <div><div class="sci-title">O Problema do Mal — o argumento mais antigo contra o teísmo</div>
+    <span class="sci-tag tag-logical">Lógico</span><span class="sci-tag tag-moral">Moral</span></div>
+  </div>
+  <div class="historical-context">Epicuro formulou o trilemma com clareza (~300 a.C.), mas o problema é anterior a qualquer formulação filosófica — é a experiência de qualquer ser humano diante do sofrimento gratuito:</div>
+  <div class="trilemma">
+    <div class="tri-card">
+      <div class="tri-q">Deus quer impedir o mal mas não pode?</div>
+      <div class="tri-a">→ Então não é onipotente. A definição clássica de Deus colapsa.</div>
+    </div>
+    <div class="tri-card">
+      <div class="tri-q">Pode impedir o mal mas não quer?</div>
+      <div class="tri-a">→ Então não é infinitamente bom. Ou é indiferente. Igualmente incompatível com a definição.</div>
+    </div>
+    <div class="tri-card">
+      <div class="tri-q">É ao mesmo tempo capaz e disposto?</div>
+      <div class="tri-a">→ De onde vem o mal? O problema não foi resolvido — apenas deslocado.</div>
+    </div>
+    <div class="tri-card">
+      <div class="tri-q">Não é capaz e não quer?</div>
+      <div class="tri-a">→ Por que chamá-lo Deus? Seria uma entidade limitada e indiferente.</div>
+    </div>
+  </div>
+  <div class="arg-box">
+    <div class="arg-title">A defesa do livre-arbítrio — a resposta mais comum</div>
+    <div class="arg-premise"><span class="arg-arrow">1.</span><span>Deus deu ao ser humano livre-arbítrio genuíno.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">2.</span><span>O livre-arbítrio genuíno inclui a possibilidade de escolher o mal.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">3.</span><span>O mal moral (guerras, assassinatos, torturas) resulta de escolhas humanas livres.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">4.</span><span>Deus permitiu o mal para preservar a liberdade — o bem maior.</span></div>
+    <div class="arg-critique">
+      <strong>Problema 1 — O mal natural:</strong> Terremotos, tsunamis, câncer infantil, parasitas que cegam crianças, doenças genéticas congênitas — nenhum desses envolve livre-arbítrio humano. A Defesa do Livre-Arbítrio não explica o mal natural.<br><br>
+      <strong>Problema 2 — Onisciência e liberdade:</strong> Se Deus é onisciente, sabia antes de criar que Adão e Eva comeriam o fruto, que Judas trairia Jesus, que o Holocausto aconteceria. Criar sabendo o que resultaria é diferente de simplesmente permitir. É iniciar uma cadeia causal cujos resultados são conhecidos de antemão.<br><br>
+      <strong>Problema 3 — A escala:</strong> A Defesa do Livre-Arbítrio pode explicar assassinatos individuais. Dificilmente explica por que um Deus onipotente e bom escolheu um universo onde 99% das espécies que já existiram foram extintas, onde o processo de criação envolve 3,8 bilhões de anos de predação, parasitismo e sofrimento antes de qualquer ser consciente aparecer.
+    </div>
+  </div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">2</div>
+    <div><div class="sci-title">O Argumento Ontológico — e por que Kant o rejeitou</div>
+    <span class="sci-tag tag-logical">Lógico</span></div>
+  </div>
+  <div class="arg-box">
+    <div class="arg-title">Anselmo de Cantuária — Proslogion (1077-1078)</div>
+    <div class="arg-premise"><span class="arg-arrow">1.</span><span>Deus é definido como "aquilo além do qual nada maior pode ser concebido."</span></div>
+    <div class="arg-premise"><span class="arg-arrow">2.</span><span>Podemos conceber tal ser mentalmente.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">3.</span><span>Um ser que existe na realidade é maior que um que existe apenas na mente.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">4.</span><span>Se Deus existisse apenas na mente, poderíamos conceber algo maior (o mesmo ser existindo na realidade).</span></div>
+    <div class="arg-premise"><span class="arg-arrow">5.</span><span>Isso contradiz a definição. Portanto, Deus deve existir na realidade.</span></div>
+    <div class="arg-critique">
+      <strong>Crítica de Gaunilo (~1078):</strong> O mesmo argumento "prova" a existência de uma ilha perfeita. Se posso conceber a ilha perfeita, e existência na realidade é maior que existência mental, então a ilha perfeita deve existir. O argumento é formalmente válido mas prova demais — qualquer coisa "perfeita" poderia ser "provada" existindo assim.<br><br>
+      <strong>Crítica de Kant (1781):</strong> Existência não é um predicado. Quando digo "o cavalo existe" não estou adicionando uma propriedade ao cavalo — estou afirmando que o conceito tem um referente no mundo. Não se pode derivar existência de uma definição; isso seria confundir lógica com ontologia.<br><br>
+      <strong>Versão modal (Plantinga, 1974):</strong> Uma versão mais sofisticada usa lógica modal (mundos possíveis). Plantinga argumenta que se um ser maximamente grandioso é possível em algum mundo possível, ele existe em todos. O problema: "possível" não é trivial — requer justificação independente de que tal ser é de fato possível, não apenas concebível.
+    </div>
+  </div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">3</div>
+    <div><div class="sci-title">A Aposta de Pascal — e seus problemas</div>
+    <span class="sci-tag tag-logical">Lógico</span></div>
+  </div>
+  <div class="arg-box">
+    <div class="arg-title">Blaise Pascal — Pensées (~1660, publicado póstumo)</div>
+    <div class="arg-premise"><span class="arg-arrow">1.</span><span>Se Deus existe e você crê: ganho infinito (salvação eterna).</span></div>
+    <div class="arg-premise"><span class="arg-arrow">2.</span><span>Se Deus existe e você não crê: perda infinita (condenação).</span></div>
+    <div class="arg-premise"><span class="arg-arrow">3.</span><span>Se Deus não existe e você crê: perda finita (tempo, recursos, certas prazeres).</span></div>
+    <div class="arg-premise"><span class="arg-arrow">4.</span><span>Se Deus não existe e você não crê: ganho finito (liberdade de crenças).</span></div>
+    <div class="arg-premise"><span class="arg-arrow">→</span><span>Ganho esperado de crer é infinito; perda de não crer é potencialmente infinita. Racionalmente, aposte em Deus.</span></div>
+    <div class="arg-critique">
+      <strong>O Problema dos Múltiplos Deuses:</strong> Em qual Deus apostar? Existem ~4.200 religiões no mundo. Se você aposta no Deus cristão e o deus real é Alá, você perdeu. Se aposta em Alá e o deus real é Vishnu, perdeu. A aposta multiplica o risco em vez de eliminá-lo — você está apostando na religião certa entre milhares, não apenas em "Deus vs. não-Deus."<br><br>
+      <strong>O Problema da Sinceridade:</strong> Pascal sugere que mesmo fingindo crer (ir à missa, adotar hábitos religiosos) produz fé genuína eventualmente. Mas a maioria das tradições teológicas distingue fé genuína de conformidade externa. Um Deus onisciente saberia a diferença entre fé e cálculo racional de apostas.<br><br>
+      <strong>O Problema Evidencial:</strong> Clifford (1877): "É sempre errado, em qualquer lugar, para qualquer pessoa, acreditar em algo com evidências insuficientes." A aposta de Pascal ignora o problema epistêmico. Não se escolhe crer por razões práticas — crença genuína exige evidência ou experiência. Você não pode decidir achar que o céu é verde por conveniência.
+    </div>
+  </div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">4</div>
+    <div><div class="sci-title">O Argumento do Design — e o que Darwin respondeu</div>
+    <span class="sci-tag tag-bio">Biologia</span><span class="sci-tag tag-logical">Lógico</span></div>
+  </div>
+  <div class="arg-box">
+    <div class="arg-title">William Paley — Natural Theology (1802)</div>
+    <div class="arg-premise"><span class="arg-arrow">1.</span><span>Se você encontrar um relógio no campo, concluirá que tem um relojoeiro — porque complexidade organizada implica design inteligente.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">2.</span><span>Os seres vivos exibem complexidade organizada muito maior que qualquer relógio.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">3.</span><span>Portanto, os seres vivos foram projetados por um designer inteligente.</span></div>
+    <div class="arg-critique">
+      <strong>David Hume (anterior a Darwin, 1779):</strong> A analogia relógio-universo falha. O relógio tem propósito externo (medir tempo). O universo tem propósito? Mesmo se o universo fosse "projetado", isso não implicaria o Deus cristão — poderia ser um designer imperfeito, múltiplos designers, um designer morto, um designer indiferente. A conclusão supera as premissas.<br><br>
+      <strong>Charles Darwin (1859):</strong> A seleção natural explicou a complexidade biológica sem design. Variação hereditária + seleção ambiental + tempo suficiente = complexidade biológica. O olho — antes o exemplo máximo de "design impossível sem criador" — tem ancestrais traçáveis em fósseis mostrando formas progressivamente mais complexas ao longo de 500 milhões de anos.<br><br>
+      <strong>O design imperfeito:</strong> Se há um designer, por que nervo laríngeo recorrente nos mamíferos (que faz um desvio absurdo de metros pelo peito antes de chegar à laringe)? Por que o ponto cego no olho humano (ausente em polvos)? Por que 99% das espécies que já existiram foram extintas? Um engenheiro humano que projetasse com tanta ineficiência seria demitido.
+    </div>
+  </div>
+</div>
+
+<div class="sci-item">
+  <div class="sci-header">
+    <div class="sci-num">5</div>
+    <div><div class="sci-title">Epistemologia da Fé — o que significa saber que Deus existe?</div>
+    <span class="sci-tag tag-logical">Lógico</span></div>
+  </div>
+  <div class="sci-analysis">A filosofia distingue vários tipos de justificação para crenças: evidência empírica (observação), dedução lógica (de premissas verdadeiras), testemunho confiável (de fontes verificáveis), experiência direta. A fé religiosa frequentemente se apoia em experiência direta (experiência mística, conversão, "sentir Deus"). Isso é epistemicamente sério — mas cria o problema da diversidade religiosa.</div>
+  <div class="arg-box">
+    <div class="arg-title">O problema da diversidade das experiências religiosas (William Alston, 1991)</div>
+    <div class="arg-premise"><span class="arg-arrow">→</span><span>Cristãos têm experiências místicas do Deus cristão.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">→</span><span>Muçulmanos têm experiências místicas de Alá.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">→</span><span>Budistas têm experiências de iluminação não-teísta.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">→</span><span>Hindus têm experiências de Brahman, Vishnu, Shiva.</span></div>
+    <div class="arg-premise"><span class="arg-arrow">→</span><span>Todas são igualmente vividas como convincentes, transformadoras e reais.</span></div>
+    <div class="arg-critique">
+      Se a experiência pessoal é evidência de Deus para o cristão, ela é evidência igualmente forte para os outros — de deuses diferentes. Não se pode usar a experiência pessoal como confirmação do próprio sistema sem conceder a mesma validade epistêmica aos sistemas que contradizem o seu. William Alston reconheceu o problema mas argumentou que práticas doxásticas estabelecidas (como a cristã) têm justificação pragmática mesmo sem resolução do conflito. É uma posição intelectualmente honesta — e profundamente humilde sobre seus próprios limites.
+    </div>
+  </div>
+  <div class="big-quote" style="margin:30px 0">"A dúvida não é o oposto da fé — é um elemento dela."<br><span style="font-size:.8rem;color:var(--muted);font-style:normal">— Paul Tillich, teólogo cristão (1952)</span></div>
+  <div class="manifesto" style="margin-top:0">
+    <p>Este documento não foi criado para convencer ninguém a abandonar a fé. Foi criado para convidar ao que Sócrates considerava o maior serviço que um ser humano pode prestar a outro: a pergunta. "Conhece-te a ti mesmo" — e parte disso é examinar as crenças que moldam quem você é.</p>
+    <p>Se a fé que você tem é genuína, ela não colapsa quando examinada. Ela se aprofunda. Os maiores teólogos da história cristã — Agostinho, Tomás de Aquino, Lutero, Kierkegaard, Barth — não eram pensadores superficiais que evitavam a dificuldade. Eram pessoas que a abraçaram e encontraram fé mais robusta do outro lado.</p>
+    <p>Se questionar ameaça a sua fé, a pergunta é: que tipo de fé é essa? Uma fé que só existe enquanto não é examinada é frágil. Uma fé que atravessa as perguntas é outra coisa.</p>
+  </div>
+</div>
+
+  </div><!-- .agent-body -->
+</div><!-- .agent-card -->
+</section>
+
 </body>
 </html>
