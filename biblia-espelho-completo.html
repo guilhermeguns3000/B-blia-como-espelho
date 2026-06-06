@@ -93,6 +93,27 @@ nav{padding:0 0 24px;margin:0;border:none;background:transparent;display:block;o
 .gp-link:hover{color:var(--gold)}
 .gp-close{position:absolute;top:8px;right:10px;background:none;border:none;color:rgba(196,170,138,.5);cursor:pointer;font-size:.85rem;padding:4px 6px;line-height:1;transition:color .15s}
 .gp-close:hover{color:var(--parchment)}
+/* ── BIOGRAPHY POPUP ── */
+.bio-ref{color:inherit;border-bottom:1px dashed rgba(91,143,168,.45);cursor:pointer;transition:color .15s,border-color .15s;padding-bottom:1px}
+.bio-ref:hover{color:var(--blue);border-bottom-color:var(--blue)}
+#bio-pop{position:fixed;z-index:602;width:345px;background:rgba(6,10,16,.99);border:1px solid rgba(91,143,168,.28);border-radius:8px;overflow:hidden;display:none;box-shadow:0 14px 60px rgba(0,0,0,.9);backdrop-filter:blur(14px)}
+#bio-pop.open{display:flex;flex-direction:column;animation:fadeIn .2s ease}
+.bp-header{display:flex;gap:0;background:rgba(91,143,168,.08);border-bottom:1px solid rgba(255,255,255,.06)}
+.bp-photo{width:90px;height:110px;object-fit:cover;object-position:top center;flex-shrink:0;filter:sepia(15%) contrast(1.05)}
+.bp-info{padding:13px 14px 11px;flex:1}
+.bp-name{font-family:"Playfair Display",serif;font-size:1rem;color:var(--parchment);line-height:1.25;margin-bottom:3px}
+.bp-dates{font-size:.62rem;letter-spacing:.12em;color:var(--blue);margin-bottom:5px}
+.bp-field{font-size:.71rem;color:var(--muted);line-height:1.4;font-style:italic}
+.bp-kw-lbl{font-size:.53rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(91,143,168,.6);padding:9px 15px 2px}
+.bp-kw{font-size:.8rem;color:var(--dim);font-style:italic;padding:0 15px 9px;border-bottom:1px solid rgba(255,255,255,.05)}
+.bp-text{font-size:.84rem;color:var(--dim);line-height:1.7;padding:9px 15px 12px}
+.bp-wiki{display:block;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);padding:8px 15px;border-top:1px solid rgba(255,255,255,.05);text-decoration:none;transition:color .15s}
+.bp-wiki:hover{color:var(--parchment)}
+.bp-close{position:absolute;top:7px;right:9px;background:none;border:none;color:rgba(196,170,138,.35);cursor:pointer;font-size:.8rem;padding:4px 6px;transition:color .15s}
+.bp-close:hover{color:var(--parchment)}
+.filo-badge{background-size:cover !important;background-position:center top !important;overflow:hidden}
+.filo-nome{cursor:pointer;transition:opacity .15s}
+.filo-nome:hover{opacity:.8}
 .vs-divider{text-align:center;color:var(--gold);font-size:.8rem;letter-spacing:.3em;padding:9px 0;opacity:.7}
 .analysis-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:18px 0 9px;display:flex;align-items:center;gap:10px}
 .analysis-label::after{content:"";flex:1;height:1px;background:rgba(212,160,23,.18)}
@@ -439,6 +460,22 @@ footer{text-align:center;padding:38px;border-top:1px solid rgba(212,160,23,.14);
   <div class="gp-key" id="gp-key"></div>
   <div class="gp-meaning" id="gp-meaning"></div>
   <span class="gp-link" onclick="goToNomes()">▸ Ver seção completa — Os Nomes de Deus</span>
+</div>
+
+<div id="bio-pop">
+  <button class="bp-close" onclick="closeBioPop()" aria-label="Fechar">✕</button>
+  <div class="bp-header">
+    <img class="bp-photo" id="bp-photo" src="" alt="" onerror="this.style.display='none'">
+    <div class="bp-info">
+      <div class="bp-name" id="bp-name"></div>
+      <div class="bp-dates" id="bp-dates"></div>
+      <div class="bp-field" id="bp-field"></div>
+    </div>
+  </div>
+  <div class="bp-kw-lbl">Obra principal</div>
+  <div class="bp-kw" id="bp-kw"></div>
+  <div class="bp-text" id="bp-text"></div>
+  <a class="bp-wiki" id="bp-wiki" href="#" target="_blank" rel="noopener">↗ Wikipedia em português</a>
 </div>
 
 <div id="app-layout">
@@ -5592,6 +5629,154 @@ window.showSection = function(id) {
     if (prog) prog.style.width = (dh > 0 ? (st / dh * 100) : 0) + "%";
     if (btn) btn.classList.toggle("visible", st > 300);
   }, {passive: true});
+})();
+
+// ── BIOGRAPHY SYSTEM ─────────────────────────────────────────────────────────
+(function(){
+var W = "https://upload.wikimedia.org/wikipedia/commons/thumb/";
+var BIO = {
+  "Ludwig Feuerbach": { photo:W+"c/c9/Ludwig_Feuerbach.jpg/150px-Ludwig_Feuerbach.jpg", dates:"1804 – 1872", nation:"Alemão", field:"Filosofia · Materialismo · Humanismo ateu", kw:"A Essência do Cristianismo (1841)", bio:"Inverteu a teologia: não é Deus que cria o homem à sua imagem — é o homem que cria Deus. A religião é a projeção das qualidades humanas mais elevadas numa entidade externa. Influência direta sobre Marx e Engels.", wiki:"https://pt.wikipedia.org/wiki/Ludwig_Feuerbach" },
+  "Feuerbach": { photo:W+"c/c9/Ludwig_Feuerbach.jpg/150px-Ludwig_Feuerbach.jpg", dates:"1804 – 1872", nation:"Alemão", field:"Filosofia · Materialismo · Humanismo ateu", kw:"A Essência do Cristianismo (1841)", bio:"Inverteu a teologia: não é Deus que cria o homem à sua imagem — é o homem que cria Deus. A religião é projeção das qualidades humanas mais elevadas numa entidade externa.", wiki:"https://pt.wikipedia.org/wiki/Ludwig_Feuerbach" },
+  "Voltaire": { photo:W+"c/c8/Atelier_de_Nicolas_de_Largilli%C3%A8re%2C_portrait_de_Voltaire_%28mus%C3%A9e_Carnavalet%29_-002.jpg/150px-Atelier_de_Nicolas_de_Largilli%C3%A8re%2C_portrait_de_Voltaire_%28mus%C3%A9e_Carnavalet%29_-002.jpg", dates:"1694 – 1778", nation:"Francês", field:"Filosofia · Iluminismo · Deísmo", kw:"Cândido (1759) · Dicionário Filosófico (1764)", bio:"O maior polemista do século XVIII. Crítico feroz da Igreja e da intolerância religiosa. Deísta — acreditava num Deus criador, mas rejeitava a revelação bíblica. Lema: 'Écraser l'infâme' (Esmagar o infame).", wiki:"https://pt.wikipedia.org/wiki/Voltaire" },
+  "Bertrand Russell": { photo:W+"5/5f/Bertrand_Russell_1957.jpg/150px-Bertrand_Russell_1957.jpg", dates:"1872 – 1970", nation:"Britânico", field:"Filosofia · Lógica · Ateísmo", kw:"Por que Não Sou Cristão (1927)", bio:"Nobel de Literatura (1950). Destruiu com clareza cirúrgica os argumentos clássicos para a existência de Deus. Referência central do ateísmo filosófico do século XX.", wiki:"https://pt.wikipedia.org/wiki/Bertrand_Russell" },
+  "Russell": { photo:W+"5/5f/Bertrand_Russell_1957.jpg/150px-Bertrand_Russell_1957.jpg", dates:"1872 – 1970", nation:"Britânico", field:"Filosofia · Lógica · Ateísmo", kw:"Por que Não Sou Cristão (1927)", bio:"Nobel de Literatura (1950). Destruiu os argumentos para a existência de Deus. Referência central do ateísmo filosófico do século XX.", wiki:"https://pt.wikipedia.org/wiki/Bertrand_Russell" },
+  "Karl Marx": { photo:W+"d/d4/Karl_Marx_001.jpg/150px-Karl_Marx_001.jpg", dates:"1818 – 1883", nation:"Alemão", field:"Filosofia · Economia política · Comunismo", kw:"O Capital (1867) · Manifesto Comunista (1848)", bio:"'A religião é o ópio do povo' — não desdém, mas análise: a religião atenua a dor da exploração sem resolver suas causas materiais. Discípulo crítico de Feuerbach.", wiki:"https://pt.wikipedia.org/wiki/Karl_Marx" },
+  "Marx": { photo:W+"d/d4/Karl_Marx_001.jpg/150px-Karl_Marx_001.jpg", dates:"1818 – 1883", nation:"Alemão", field:"Filosofia · Economia · Comunismo", kw:"O Capital (1867)", bio:"'A religião é o ópio do povo' — análise do papel anestésico da religião para a dominação de classe.", wiki:"https://pt.wikipedia.org/wiki/Karl_Marx" },
+  "Albert Camus": { photo:W+"0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/150px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg", dates:"1913 – 1960", nation:"Argelino-Francês", field:"Filosofia · Absurdismo · Literatura", kw:"O Mito de Sísifo (1942) · O Estrangeiro (1942)", bio:"Nobel de Literatura (1957). Criador da filosofia do absurdo: a vida não tem sentido inerente e o homem deve se rebelar sem recorrer a Deus. A fé religiosa é um 'salto filosófico' — fuga diante do absurdo.", wiki:"https://pt.wikipedia.org/wiki/Albert_Camus" },
+  "Camus": { photo:W+"0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/150px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg", dates:"1913 – 1960", nation:"Argelino-Francês", field:"Filosofia · Absurdismo", kw:"O Mito de Sísifo (1942)", bio:"Nobel de Literatura. A vida não tem sentido inerente — o homem deve se rebelar sem recorrer a Deus. A fé é fuga.", wiki:"https://pt.wikipedia.org/wiki/Albert_Camus" },
+  "Søren Kierkegaard": { photo:W+"9/9e/Kierkegaard.jpg/150px-Kierkegaard.jpg", dates:"1813 – 1855", nation:"Dinamarquês", field:"Filosofia · Existencialismo · Teologia", kw:"Ou-Ou (1843) · Temor e Tremor (1843)", bio:"Pai do existencialismo e paradoxalmente cristão fervoroso. Para Kierkegaard, a fé autêntica exige o 'salto irracional' — Abraão levando Isaac ao sacrifício é absurdo para a ética racional, e por isso é genuinamente fé.", wiki:"https://pt.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard" },
+  "Kierkegaard": { photo:W+"9/9e/Kierkegaard.jpg/150px-Kierkegaard.jpg", dates:"1813 – 1855", nation:"Dinamarquês", field:"Filosofia · Existencialismo · Teologia", kw:"Temor e Tremor (1843)", bio:"Pai do existencialismo. A fé autêntica exige o 'salto irracional' — vai além da ética e da razão, e por isso é genuinamente fé.", wiki:"https://pt.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard" },
+  "Friedrich Nietzsche": { photo:W+"1/1b/Nietzsche187a.jpg/150px-Nietzsche187a.jpg", dates:"1844 – 1900", nation:"Alemão", field:"Filosofia · Crítica cultural · Vontade de poder", kw:"Assim Falou Zaratustra (1883) · Genealogia da Moral (1887) · O Anticristo (1895)", bio:"'Deus está morto' não é triunfo — é diagnóstico cultural. Nietzsche atacava o Cristianismo como religião do ressentimento. Mas também criticava o ateísmo vazio: matar Deus sem criar novos valores é niilismo.", wiki:"https://pt.wikipedia.org/wiki/Friedrich_Nietzsche" },
+  "Nietzsche": { photo:W+"1/1b/Nietzsche187a.jpg/150px-Nietzsche187a.jpg", dates:"1844 – 1900", nation:"Alemão", field:"Filosofia · Crítica cultural · Vontade de poder", kw:"O Anticristo (1895) · Genealogia da Moral (1887)", bio:"'Deus está morto' — diagnóstico, não triunfo. O Cristianismo é a moral dos escravos, do ressentimento. Matar Deus sem criar novos valores é niilismo.", wiki:"https://pt.wikipedia.org/wiki/Friedrich_Nietzsche" },
+  "Baruch Spinoza": { photo:W+"e/ea/Spinoza.jpg/150px-Spinoza.jpg", dates:"1632 – 1677", nation:"Holandês (origem judaico-portuguesa)", field:"Filosofia · Racionalismo · Panteísmo", kw:"Ética (1677) · Tractatus Theologico-Politicus (1670)", bio:"Excomungado da sinagoga de Amsterdã aos 23 anos. Para Spinoza, Deus e a Natureza são a mesma coisa. Primeiro a fazer crítica histórica sistemática da Bíblia como texto humano, produto de épocas e autores distintos.", wiki:"https://pt.wikipedia.org/wiki/Baruch_Spinoza" },
+  "Spinoza": { photo:W+"e/ea/Spinoza.jpg/150px-Spinoza.jpg", dates:"1632 – 1677", nation:"Holandês (origem judaico-portuguesa)", field:"Filosofia · Racionalismo · Panteísmo", kw:"Ética (1677)", bio:"Excomungado aos 23 anos. Deus = Natureza. Primeiro crítico histórico sistemático da Bíblia.", wiki:"https://pt.wikipedia.org/wiki/Baruch_Spinoza" },
+  "David Hume": { photo:W+"e/ea/Painting_of_David_Hume.jpg/150px-Painting_of_David_Hume.jpg", dates:"1711 – 1776", nation:"Escocês", field:"Filosofia · Empirismo · Ceticismo", kw:"Diálogos sobre a Religião Natural (1779)", bio:"O maior empirista ocidental. Demoliu o argumento dos milagres, o argumento do design e a causalidade como fundamento metafísico. Seus 'Diálogos' são o exame mais rigoroso dos argumentos teístas.", wiki:"https://pt.wikipedia.org/wiki/David_Hume" },
+  "Hume": { photo:W+"e/ea/Painting_of_David_Hume.jpg/150px-Painting_of_David_Hume.jpg", dates:"1711 – 1776", nation:"Escocês", field:"Filosofia · Empirismo · Ceticismo", kw:"Diálogos sobre a Religião Natural (1779)", bio:"O maior empirista ocidental. Demoliu o argumento dos milagres e do design.", wiki:"https://pt.wikipedia.org/wiki/David_Hume" },
+  "Epicuro": { photo:W+"8/88/Epikouros_BM_1843.jpg/150px-Epikouros_BM_1843.jpg", dates:"341 – 270 a.C.", nation:"Grego (Samos)", field:"Filosofia · Hedonismo racional · Epicurismo", kw:"Carta a Meneceu · Máximas Capitais", bio:"Fundador do Epicurismo. Tornava os deuses irrelevantes: existem mas não interferem na vida humana. O 'Paradoxo de Epicuro': se Deus quer eliminar o mal e pode fazê-lo, por que o mal existe?", wiki:"https://pt.wikipedia.org/wiki/Epicuro" },
+  "Immanuel Kant": { photo:W+"4/43/Immanuel_Kant_%28painted_portrait%29.jpg/150px-Immanuel_Kant_%28painted_portrait%29.jpg", dates:"1724 – 1804", nation:"Prussiano (alemão)", field:"Filosofia · Idealismo transcendental · Ética", kw:"Crítica da Razão Pura (1781) · Crítica da Razão Prática (1788)", bio:"Destruiu as provas racionais da existência de Deus mas manteve Deus como postulado moral necessário. 'Precisei limitar o conhecimento para dar lugar à fé.' Para Kant, a Bíblia ultrapassa o que a razão pode verificar.", wiki:"https://pt.wikipedia.org/wiki/Immanuel_Kant" },
+  "Kant": { photo:W+"4/43/Immanuel_Kant_%28painted_portrait%29.jpg/150px-Immanuel_Kant_%28painted_portrait%29.jpg", dates:"1724 – 1804", nation:"Prussiano (alemão)", field:"Filosofia · Idealismo transcendental · Ética", kw:"Crítica da Razão Pura (1781)", bio:"Destruiu as provas racionais de Deus mas manteve-o como postulado moral. 'Precisei limitar o conhecimento para dar lugar à fé.'", wiki:"https://pt.wikipedia.org/wiki/Immanuel_Kant" },
+  "Bart Ehrman": { photo:W+"0/06/Bart_D._Ehrman_2019.jpg/150px-Bart_D._Ehrman_2019.jpg", dates:"1955 – presente", nation:"Norte-americano", field:"Crítica textual do NT · Estudos bíblicos", kw:"Misquoting Jesus (2005) · Jesus, Interrupted (2009)", bio:"Ex-evangélico, hoje agnóstico. Professor na UNC-Chapel Hill. Documentou milhares de variações entre manuscritos do NT que contradizem a inerrância bíblica. Um dos maiores divulgadores da crítica textual.", wiki:"https://en.wikipedia.org/wiki/Bart_Ehrman" },
+  "Israel Finkelstein": { photo:W+"c/c1/Israel_Finkelstein_2014.jpg/150px-Israel_Finkelstein_2014.jpg", dates:"1949 – presente", nation:"Israelense", field:"Arqueologia bíblica · Universidade de Tel Aviv", kw:"The Bible Unearthed (2001)", bio:"Mostrou com escavações rigorosas que não há evidência arqueológica para o Êxodo em escala bíblica, nem para a conquista de Canaã conforme Josué. Os reinos de Davi e Salomão eram menores do que a Bíblia descreve.", wiki:"https://en.wikipedia.org/wiki/Israel_Finkelstein" },
+  "Mark S. Smith": { photo:"", dates:"1955 – presente", nation:"Norte-americano", field:"Religião israelita · Princeton Theological Seminary", kw:"The Origins of Biblical Monotheism (2001)", bio:"Documentou como YHWH absorveu os atributos de El e Baal ao longo dos séculos. O monoteísmo israelita emergiu gradualmente de um ambiente politeísta.", wiki:"https://en.wikipedia.org/wiki/Mark_S._Smith_(scholar)" },
+  "Kathleen Kenyon": { photo:"https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Kathleen_Kenyon.jpg/150px-Kathleen_Kenyon.jpg", dates:"1906 – 1978", nation:"Britânica", field:"Arqueologia · Escavações de Jericó", kw:"Digging Up Jericho (1957)", bio:"Escavou Jericó (1952-58) e mostrou que a cidade estava praticamente desabitada no Bronze Tardio — o período da suposta conquista de Josué. Não havia muralhas para cair.", wiki:"https://en.wikipedia.org/wiki/Kathleen_Kenyon" },
+};
+
+var BIO_KEYS = Object.keys(BIO).sort(function(a,b){return b.length-a.length;});
+var BIO_RE = new RegExp('('+BIO_KEYS.map(function(k){return k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('|')+')', 'g');
+
+var PHIL_PHOTOS = {
+  "Feuerbach": W+"c/c9/Ludwig_Feuerbach.jpg/60px-Ludwig_Feuerbach.jpg",
+  "Voltaire":  W+"c/c8/Atelier_de_Nicolas_de_Largilli%C3%A8re%2C_portrait_de_Voltaire_%28mus%C3%A9e_Carnavalet%29_-002.jpg/60px-Atelier_de_Nicolas_de_Largilli%C3%A8re%2C_portrait_de_Voltaire_%28mus%C3%A9e_Carnavalet%29_-002.jpg",
+  "Russell":   W+"5/5f/Bertrand_Russell_1957.jpg/60px-Bertrand_Russell_1957.jpg",
+  "Marx":      W+"d/d4/Karl_Marx_001.jpg/60px-Karl_Marx_001.jpg",
+  "Camus":     W+"0/08/Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg/60px-Albert_Camus%2C_gagnant_de_prix_Nobel%2C_portrait_en_buste%2C_pos%C3%A9_au_bureau%2C_faisant_face_%C3%A0_gauche%2C_cigarette_de_tabagisme.jpg",
+  "Kierkegaard": W+"9/9e/Kierkegaard.jpg/60px-Kierkegaard.jpg",
+  "Nietzsche": W+"1/1b/Nietzsche187a.jpg/60px-Nietzsche187a.jpg",
+  "Spinoza":   W+"e/ea/Spinoza.jpg/60px-Spinoza.jpg",
+  "Hume":      W+"e/ea/Painting_of_David_Hume.jpg/60px-Painting_of_David_Hume.jpg",
+  "Epicuro":   W+"8/88/Epikouros_BM_1843.jpg/60px-Epikouros_BM_1843.jpg",
+  "Kant":      W+"4/43/Immanuel_Kant_%28painted_portrait%29.jpg/60px-Immanuel_Kant_%28painted_portrait%29.jpg",
+};
+
+window.openBioPop = function(name, el) {
+  var d = BIO[name]; if (!d) return;
+  var ph = document.getElementById('bp-photo');
+  if (d.photo) { ph.src = d.photo; ph.style.display = 'block'; } else { ph.style.display = 'none'; }
+  document.getElementById('bp-name').textContent = name;
+  document.getElementById('bp-dates').textContent = d.dates + ' · ' + d.nation;
+  document.getElementById('bp-field').textContent = d.field;
+  document.getElementById('bp-kw').textContent = d.kw;
+  document.getElementById('bp-text').textContent = d.bio;
+  document.getElementById('bp-wiki').href = d.wiki;
+  var pop = document.getElementById('bio-pop');
+  pop.classList.add('open');
+  var rect = el.getBoundingClientRect(), pw = 347, ph2 = 290;
+  var top = rect.bottom + 8, left = rect.left;
+  if (top + ph2 > window.innerHeight - 16) top = rect.top - ph2 - 8;
+  if (left + pw > window.innerWidth - 16) left = window.innerWidth - pw - 16;
+  if (left < 8) left = 8;
+  if (top < 8) top = 8;
+  pop.style.top = top + 'px'; pop.style.left = left + 'px';
+};
+
+window.closeBioPop = function() {
+  document.getElementById('bio-pop').classList.remove('open');
+};
+
+document.addEventListener('click', function(e) {
+  var pop = document.getElementById('bio-pop');
+  if (pop.classList.contains('open') && !pop.contains(e.target) && !e.target.classList.contains('bio-ref')) closeBioPop();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeBioPop(); closeGlosPop(); } });
+
+function addPhilPhotos() {
+  document.querySelectorAll('.filo-badge').forEach(function(badge) {
+    var nome = badge.parentElement && badge.parentElement.querySelector('.filo-nome') && badge.parentElement.querySelector('.filo-nome').textContent.trim();
+    if (!nome || !PHIL_PHOTOS[nome]) return;
+    badge.style.backgroundImage = "url('"+PHIL_PHOTOS[nome]+"')";
+    badge.textContent = '';
+  });
+  document.querySelectorAll('.filo-nome').forEach(function(el) {
+    var nome = el.textContent.trim();
+    if (BIO[nome]) { el.onclick = function(){ openBioPop(nome, el); }; }
+  });
+  // Philosopher index section photos
+  document.querySelectorAll('.pi-btn .pi-init').forEach(function(init) {
+    var nome = init.parentElement.querySelector('.pi-name') && init.parentElement.querySelector('.pi-name').textContent.trim();
+    if (!nome || !PHIL_PHOTOS[nome]) return;
+    init.style.backgroundImage = "url('"+PHIL_PHOTOS[nome]+"')";
+    init.style.backgroundSize = 'cover';
+    init.style.backgroundPosition = 'center top';
+    init.textContent = '';
+  });
+}
+
+function bioAnnotate() {
+  var sel = '.nome-body,.nomes-intro,.filo-texto,.analysis-text,.c-analysis,.hist-text,.nomes-filo,.chapter-intro,.section-lead,.intro-block,.c-hist-text';
+  document.querySelectorAll(sel).forEach(function(container) {
+    if (container.dataset.bAnnotated) return;
+    container.dataset.bAnnotated = '1';
+    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+    var nodes = []; var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentNode.classList.contains('bio-ref') && !n.parentNode.classList.contains('glos-ref') && BIO_RE.test(n.textContent)) nodes.push(n);
+      BIO_RE.lastIndex = 0;
+    }
+    nodes.forEach(function(tn) {
+      if (tn.parentNode.classList.contains('bio-ref') || tn.parentNode.classList.contains('glos-ref')) return;
+      var text = tn.textContent;
+      BIO_RE.lastIndex = 0;
+      var matches = Array.from(text.matchAll(BIO_RE));
+      if (!matches.length) return;
+      var frag = document.createDocumentFragment(), last = 0;
+      matches.forEach(function(m) {
+        if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        var sp = document.createElement('span');
+        sp.className = 'bio-ref';
+        sp.setAttribute('onclick','openBioPop("'+m[0].replace(/"/g,'&quot;')+'",this)');
+        sp.setAttribute('tabindex','0');
+        sp.setAttribute('title','Ver biografia: '+m[0]);
+        sp.textContent = m[0];
+        frag.appendChild(sp);
+        last = m.index + m[0].length;
+      });
+      if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      if (tn.parentNode) tn.parentNode.replaceChild(frag, tn);
+    });
+  });
+}
+
+var _orig4 = window.showSection;
+window.showSection = function(id, btn) {
+  _orig4(id, btn);
+  setTimeout(function(){ bioAnnotate(); addPhilPhotos(); }, 250);
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function(){ setTimeout(function(){ bioAnnotate(); addPhilPhotos(); }, 500); });
+} else {
+  setTimeout(function(){ bioAnnotate(); addPhilPhotos(); }, 500);
+}
 })();
 
 // ── GLOSSARY SYSTEM ──────────────────────────────────────────────────────────
